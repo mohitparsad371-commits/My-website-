@@ -5,13 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Learn MS Excel, Crypto Trading, Stock Market, Freelancing, and Basic Computer Skills with Mohit Prasad Services in New Delhi. Affordable online courses.">
   <meta name="keywords" content="MS Excel course Delhi, crypto trading course, stock market training, freelancing guide, basic computer course, Mohit Prasad Services">
+  <meta property="og:title" content="Mohit Prasad Services">
+  <meta property="og:description" content="Premium courses for skill development in New Delhi.">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630?text=MPS+Banner">
+  <meta property="og:url" content="https://yourwebsite.com">
   <title>Mohit Prasad Services</title>
+  <link rel="icon" href="https://via.placeholder.com/32?text=MPS" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
       background: #f5f5f5;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background: #222;
+      color: #ddd;
+    }
+    body.dark-mode .course-card, body.dark-mode .contact form {
+      background: #333;
+      color: #ddd;
+    }
+    body.dark-mode .course-card button, body.dark-mode .contact button {
+      background: #ff5e00;
+    }
+    body.dark-mode .course-card:hover, body.dark-mode .contact button:hover {
+      background: #e55000;
     }
     /* Header with Logo */
     header {
@@ -47,10 +68,19 @@
       text-decoration: none;
       font-weight: 500;
       transition: background 0.3s;
+      aria-label: "Navigate to section";
     }
     nav a:hover {
       background: #ff5e00;
       border-radius: 5px;
+    }
+    nav button#dark-toggle {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-left: 20px;
     }
     /* Hero Section */
     .hero {
@@ -89,6 +119,8 @@
       height: 300px;
       margin: auto;
       perspective: 1000px;
+      background: url('https://via.placeholder.com/300?text=Globe+Image') no-repeat center/cover; /* Add actual globe image URL */
+      border-radius: 50%;
     }
     .globe-inner {
       position: absolute;
@@ -155,6 +187,7 @@
       width: 100%;
       height: 200px;
       object-fit: cover;
+      loading: lazy;
     }
     .course-card h3 {
       font-size: 1.5rem;
@@ -184,6 +217,67 @@
     }
     .course-card button:hover {
       background: #e55000;
+    }
+    /* Testimonials Section (New) */
+    .testimonials {
+      padding: 60px 20px;
+      background: #f5f5f5;
+      text-align: center;
+    }
+    .testimonials h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #111;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .testimonial-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .testimonial-card p {
+      font-style: italic;
+      color: #666;
+    }
+    .testimonial-card cite {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ff5e00;
+    }
+    /* FAQ Section (New) */
+    .faq {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .faq h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #111;
+    }
+    .faq details {
+      background: #fff;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .faq summary {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: 500;
+    }
+    .faq p {
+      padding: 0 15px 15px;
+      color: #666;
     }
     /* About Section */
     .about {
@@ -250,9 +344,14 @@
       text-align: center;
       padding: 20px;
     }
+    footer a {
+      color: #ff5e00;
+      text-decoration: none;
+      margin: 0 10px;
+    }
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
-      .courses h2, .contact h2, .animation h2, .about h2 { font-size: 2rem; }
+      .courses h2, .contact h2, .animation h2, .about h2, .testimonials h2, .faq h2 { font-size: 2rem; }
       header img { max-width: 180px; }
       .globe { width: 200px; height: 200px; }
       .course-marker div { font-size: 0.8rem; padding: 5px 10px; transform: translateZ(100px); }
@@ -261,21 +360,25 @@
       .course-marker:nth-child(3) div { transform: rotateY(144deg) translateZ(100px); }
       .course-marker:nth-child(4) div { transform: rotateY(216deg) translateZ(100px); }
       .course-marker:nth-child(5) div { transform: rotateY(288deg) translateZ(100px); }
+      nav { flex-wrap: wrap; justify-content: center; }
+      nav a { padding: 10px 15px; }
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <img src="https://via.placeholder.com/250x60?text=MPS+Logo" alt="Mohit Prasad Services Logo">
+    <img src="https://via.placeholder.com/250x60?text=MPS+Logo" alt="Mohit Prasad Services Logo" loading="lazy">
     <p>Seekho, Kamao, Badho! | +91 8595366682</p>
   </header>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#animation">Animation</a>
-    <a href="#courses">Courses</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" aria-label="Home Section">Home</a>
+    <a href="#animation" aria-label="Animation Section">Animation</a>
+    <a href="#courses" aria-label="Courses Section">Courses</a>
+    <a href="#testimonials" aria-label="Testimonials Section">Testimonials</a>
+    <a href="#faq" aria-label="FAQ Section">FAQ</a>
+    <a href="#about" aria-label="About Section">About</a>
+    <a href="#contact" aria-label="Contact Section">Contact</a>
+    <button id="dark-toggle">🌙 Dark Mode</button>
   </nav>
   <section class="hero" id="home">
     <h1>Mohit Prasad Services</h1>
@@ -297,41 +400,73 @@
     <h2>Our Premium Courses</h2>
     <div class="course-grid">
       <div class="course-card">
-        <img src="https://source.unsplash.com/random/300x200/?excel" alt="MS Excel Course">
+        <img src="https://source.unsplash.com/random/300x200/?excel" alt="MS Excel Course Image" loading="lazy">
         <h3>MS Excel Training</h3>
         <p>Master data analysis with Excel’s powerful tools.</p>
         <div class="price">₹499</div>
         <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for MS Excel Training','_blank')">Enroll Now</button>
       </div>
       <div class="course-card">
-        <img src="https://source.unsplash.com/random/300x200/?computer" alt="Basic Computer Course">
+        <img src="https://source.unsplash.com/random/300x200/?computer" alt="Basic Computer Course Image" loading="lazy">
         <h3>Basic Computer Course</h3>
         <p>Learn Word, PowerPoint, and internet basics for career growth.</p>
         <div class="price">₹599</div>
         <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for Basic Computer Course','_blank')">Enroll Now</button>
       </div>
       <div class="course-card">
-        <img src="https://source.unsplash.com/random/300x200/?freelancing" alt="Freelancing Guidance">
+        <img src="https://source.unsplash.com/random/300x200/?freelancing" alt="Freelancing Guidance Image" loading="lazy">
         <h3>Freelancing Guidance</h3>
         <p>Build a global freelancing career with expert tips.</p>
         <div class="price">₹799</div>
         <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for Freelancing Guidance','_blank')">Enroll Now</button>
       </div>
       <div class="course-card">
-        <img src="https://source.unsplash.com/random/300x200/?crypto" alt="Crypto Trading Basics">
+        <img src="https://source.unsplash.com/random/300x200/?crypto" alt="Crypto Trading Basics Image" loading="lazy">
         <h3>Crypto Trading Basics</h3>
         <p>Understand crypto markets and trading strategies.</p>
         <div class="price">₹999</div>
         <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for Crypto Trading Basics','_blank')">Enroll Now</button>
       </div>
       <div class="course-card">
-        <img src="https://source.unsplash.com/random/300x200/?stockmarket" alt="Stock Market Training">
+        <img src="https://source.unsplash.com/random/300x200/?stockmarket" alt="Stock Market Training Image" loading="lazy">
         <h3>Stock Market Training</h3>
         <p>Learn trading and investment for wealth creation.</p>
         <div class="price">₹999</div>
         <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for Stock Market Training','_blank')">Enroll Now</button>
       </div>
     </div>
+  </section>
+  <section class="testimonials" id="testimonials">
+    <h2>What Our Students Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <p>"The MS Excel course transformed my data skills!"</p>
+        <cite>- Rajesh K., Delhi</cite>
+      </div>
+      <div class="testimonial-card">
+        <p>"Crypto Trading basics were easy to understand and practical."</p>
+        <cite>- Priya S., New Delhi</cite>
+      </div>
+      <div class="testimonial-card">
+        <p>"Freelancing guidance helped me land my first client!"</p>
+        <cite>- Amit P., India</cite>
+      </div>
+    </div>
+  </section>
+  <section class="faq" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>How do I enroll?</summary>
+      <p>Click 'Enroll Now' on any course to contact via WhatsApp.</p>
+    </details>
+    <details>
+      <summary>Are courses online?</summary>
+      <p>Yes, all courses are online with flexible timings.</p>
+    </details>
+    <details>
+      <summary>What is the duration?</summary>
+      <p>Each course is 4-6 weeks, depending on the topic.</p>
+    </details>
   </section>
   <section class="about" id="about">
     <h2>About Us</h2>
@@ -340,9 +475,9 @@
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <form onsubmit="sendMessage(event)">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <select id="course" required>
+      <input type="text" id="name" placeholder="Your Name" required aria-label="Your Name">
+      <input type="email" id="email" placeholder="Your Email" required aria-label="Your Email">
+      <select id="course" required aria-label="Select Course">
         <option value="">Select Course</option>
         <option>MS Excel Training</option>
         <option>Basic Computer Course</option>
@@ -350,21 +485,33 @@
         <option>Crypto Trading Basics</option>
         <option>Stock Market Training</option>
       </select>
-      <textarea id="message" placeholder="Your Message" rows="4"></textarea>
+      <textarea id="message" placeholder="Your Message" rows="4" aria-label="Your Message"></textarea>
       <button type="submit">Submit</button>
     </form>
   </section>
   <footer>
     <p>&copy; 2025 Mohit Prasad Services. All Rights Reserved.</p>
     <p>Email: info@mohitprasadservices.com | Phone: +91 8595366682 | New Delhi, India</p>
+    <p>Follow us: <a href="https://facebook.com" aria-label="Facebook">Facebook</a> | <a href="https://instagram.com" aria-label="Instagram">Instagram</a> | <a href="https://linkedin.com" aria-label="LinkedIn">LinkedIn</a></p>
   </footer>
   <script>
+    // Dark Mode Toggle
+    const darkToggle = document.getElementById('dark-toggle');
+    darkToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      darkToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+
     function sendMessage(event) {
       event.preventDefault();
-      let name = document.getElementById('name').value;
-      let email = document.getElementById('email').value;
-      let course = document.getElementById('course').value;
-      let message = document.getElementById('message').value;
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const course = document.getElementById('course').value;
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !course) {
+        alert('Please fill all required fields!');
+        return;
+      }
       let text = `New Enquiry%0AName: ${name}%0AEmail: ${email}%0ACourse: ${course}%0AMessage: ${message}`;
       window.open(`https://wa.me/918595366682?text=${text}`, '_blank');
       document.querySelector('form').reset();
