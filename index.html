@@ -3,9 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohit Prasad Services</title>
+  <title>Mohit Prasad Services - Excel, Stock Market & Crypto Training</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    :root {
+      --primary: #00e676;
+      --primary-dark: #00a43a;
+      --secondary: #009688;
+      --dark: #0d1117;
+      --dark-light: #161b22;
+      --text: #c9d1d9;
+      --white: #ffffff;
+    }
 
     * {
       margin: 0;
@@ -15,212 +26,749 @@
     }
 
     body {
-      background: #0d1117;
-      color: #fff;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
     }
 
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header & Navigation */
     header {
-      background: #000;
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 15px 0;
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    header a {
-      color: white;
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
       text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-menu a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
       transition: color 0.3s;
+      position: relative;
     }
 
-    header a:hover {
-      color: #00e676;
+    .nav-menu a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary);
+      transition: width 0.3s;
     }
 
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .nav-menu a:hover:after {
+      width: 100%;
+    }
+
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 24px;
+      color: var(--white);
+    }
+
+    /* Hero Section */
     .hero {
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #004d40 0%, #009688 100%);
       text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #004d40, #009688);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
     }
 
     .hero h1 {
-      font-size: 40px;
-      margin-bottom: 15px;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
       font-weight: 700;
+      color: var(--white);
     }
 
     .hero p {
-      font-size: 18px;
-      margin-bottom: 25px;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .btn {
-      background: #00c853;
-      padding: 12px 28px;
+      display: inline-block;
+      background: var(--primary);
+      color: var(--dark);
+      padding: 14px 32px;
       border: none;
       border-radius: 8px;
       font-size: 16px;
-      cursor: pointer;
-      color: white;
-      text-decoration: none;
       font-weight: 600;
-      transition: background 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 200, 83, 0.3);
     }
 
     .btn:hover {
-      background: #00a43a;
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 200, 83, 0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      margin-left: 15px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0, 230, 118, 0.1);
+    }
+
+    /* Services Section */
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-top: 80px;
+    }
+
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--white);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2:after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 3px;
+      background: var(--primary);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .section-title p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text);
     }
 
     .courses {
-      padding: 50px 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      max-width: 1100px;
-      margin: auto;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 20px;
     }
 
     .course-card {
-      background: linear-gradient(145deg, #161b22, #1f2937);
-      padding: 20px;
+      background: linear-gradient(145deg, var(--dark-light), #1f2937);
+      padding: 30px;
       border-radius: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      gap: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
     }
 
     .course-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
     }
 
-    .course-card img {
+    .course-icon {
       width: 80px;
       height: 80px;
-      border-radius: 12px;
-      object-fit: cover;
+      border-radius: 50%;
+      background: rgba(0, 230, 118, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: var(--primary);
     }
 
     .course-card h3 {
-      margin: 0;
-      color: #00e676;
-      font-size: 20px;
+      color: var(--primary);
+      font-size: 24px;
+      margin: 10px 0;
     }
 
     .course-card p {
-      font-size: 14px;
       text-align: center;
-      color: #c9d1d9;
-    }
-
-    .contact {
-      background: #111;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .contact h2 {
       margin-bottom: 15px;
-      font-size: 26px;
-      font-weight: 700;
     }
 
-    .contact p {
-      margin: 8px 0;
-      font-size: 16px;
+    .features {
+      list-style: none;
+      width: 100%;
+      margin-top: 15px;
     }
 
-    .contact a {
-      color: #00e676;
+    .features li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+    }
+
+    .features li:before {
+      content: '✓';
+      color: var(--primary);
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: var(--dark-light);
+      padding: 80px 0;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .testimonial-card {
+      background: var(--dark);
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    .testimonial-card:before {
+      content: '"';
+      font-size: 60px;
+      color: var(--primary);
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      opacity: 0.2;
+    }
+
+    .testimonial-content {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: #555;
+      margin-right: 15px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: bold;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+    }
+
+    .author-details h4 {
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    .author-details p {
+      font-size: 14px;
+      color: var(--primary);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 80px 0;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(0, 230, 118, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--primary);
+    }
+
+    .contact-details h3 {
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+
+    .contact-details a {
+      color: var(--text);
       text-decoration: none;
-      font-weight: 600;
+      transition: color 0.3s;
     }
 
+    .contact-details a:hover {
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      padding: 40px 0 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--dark-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    /* WhatsApp Float */
     .whatsapp-float {
       position: fixed;
       width: 60px;
       height: 60px;
-      bottom: 20px;
-      right: 20px;
+      bottom: 25px;
+      right: 25px;
       background: #25D366;
       color: white;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 30px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      font-size: 24px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
       text-decoration: none;
       z-index: 1000;
-      transition: transform 0.3s;
+      transition: all 0.3s;
     }
 
     .whatsapp-float:hover {
-      transform: scale(1.1);
+      transform: scale(1.1) rotate(10deg);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background: var(--dark);
+        flex-direction: column;
+        width: 250px;
+        height: 100vh;
+        padding: 40px 20px;
+        transition: right 0.3s;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-menu.active {
+        right: 0;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        margin-bottom: 10px;
+      }
+
+      .btn-secondary {
+        margin-left: 0;
+      }
+
+      .section-title h2 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
-
+  <!-- Header & Navigation -->
   <header>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <div class="container nav-container">
+      <a href="#" class="logo">Mohit<span>Prasad</span></a>
+      
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Mohit Prasad Services</h1>
-    <p>Affordable & Practical Training in MS Excel, Stock Market, Crypto Trading, Freelancing & Basic Computer in Delhi.</p>
-    <a href="#services" class="btn">Explore Courses</a>
-  </section>
-
-  <section id="services" class="courses">
-    <div class="course-card">
-      <img src="https://img.icons8.com/color/96/ms-excel.png" alt="MS Excel">
-      <h3>MS Excel</h3>
-      <p>Master Excel from basics to advanced with real-world projects.</p>
-    </div>
-
-    <div class="course-card">
-      <img src="https://img.icons8.com/color/96/stocks.png" alt="Stock Market">
-      <h3>Stock Market</h3>
-      <p>Learn stock trading strategies & long-term investment methods.</p>
-    </div>
-
-    <div class="course-card">
-      <img src="https://img.icons8.com/color/96/cryptocurrency.png" alt="Crypto Trading">
-      <h3>Crypto Trading</h3>
-      <p>Understand cryptocurrency trading, wallets & risk management.</p>
-    </div>
-
-    <div class="course-card">
-      <img src="https://img.icons8.com/color/96/freelance.png" alt="Freelancing">
-      <h3>Freelancing</h3>
-      <p>Step-by-step guide to freelancing & building a global career.</p>
-    </div>
-
-    <div class="course-card">
-      <img src="https://img.icons8.com/color/96/computer.png" alt="Basic Computer">
-      <h3>Basic Computer</h3>
-      <p>Learn essential computer skills, MS Office & internet usage.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <h1>Master Practical Skills for Career Growth</h1>
+      <p>Affordable & Practical Training in MS Excel, Stock Market, Crypto Trading, Freelancing & Basic Computer in Delhi. Learn from an industry expert with real-world experience.</p>
+      <div class="hero-buttons">
+        <a href="#services" class="btn">Explore Courses</a>
+        <a href="#contact" class="btn btn-secondary">Contact Now</a>
+      </div>
     </div>
   </section>
 
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:mohitparsad371@gmail.com">mohitparsad371@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/918595366682" target="_blank">+91 8595366682</a></p>
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Comprehensive training programs designed to give you practical, marketable skills</p>
+      </div>
+      
+      <div class="courses">
+        <div class="course-card">
+          <div class="course-icon">
+            <i class="fas fa-table"></i>
+          </div>
+          <h3>MS Excel Mastery</h3>
+          <p>From basic functions to advanced data analysis, become an Excel expert</p>
+          <ul class="features">
+            <li>Formulas and Functions</li>
+            <li>Data Visualization</li>
+            <li>Pivot Tables & Analysis</li>
+            <li>Real-world Projects</li>
+            <li>Certification</li>
+          </ul>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Stock Market Trading</h3>
+          <p>Learn proven strategies for stock trading and long-term investment</p>
+          <ul class="features">
+            <li>Market Fundamentals</li>
+            <li>Technical Analysis</li>
+            <li>Risk Management</li>
+            <li>Portfolio Building</li>
+            <li>Live Trading Sessions</li>
+          </ul>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">
+            <i class="fab fa-bitcoin"></i>
+          </div>
+          <h3>Crypto Trading</h3>
+          <p>Navigate the world of cryptocurrency with confidence and skill</p>
+          <ul class="features">
+            <li>Crypto Fundamentals</li>
+            <li>Exchange Platforms</li>
+            <li>Wallet Management</li>
+            <li>Trading Strategies</li>
+            <li>Risk Assessment</li>
+          </ul>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Freelancing</h3>
+          <p>Build a successful freelancing career from the ground up</p>
+          <ul class="features">
+            <li>Platform Setup</li>
+            <li>Profile Optimization</li>
+            <li>Client Acquisition</li>
+            <li>Project Pricing</li>
+            <li>Portfolio Development</li>
+          </ul>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">
+            <i class="fas fa-desktop"></i>
+          </div>
+          <h3>Basic Computer Skills</h3>
+          <p>Essential computer literacy for personal and professional use</p>
+          <ul class="features">
+            <li>OS Navigation</li>
+            <li>MS Office Suite</li>
+            <li>Internet & Email</li>
+            <li>File Management</li>
+            <li>Basic Troubleshooting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>Student Testimonials</h2>
+        <p>Hear what our students have to say about their learning experience</p>
+      </div>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"Mohit's Excel training completely transformed how I work with data. The practical approach helped me immediately apply what I learned to my job."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-img">R</div>
+            <div class="author-details">
+              <h4>Rahul Sharma</h4>
+              <p>MS Excel Student</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"The stock market course gave me the confidence to start investing on my own. The lessons on risk management were particularly valuable."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-img">P</div>
+            <div class="author-details">
+              <h4>Priya Patel</h4>
+              <p>Stock Market Student</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <p>"I knew nothing about crypto before this course. Now I understand how to analyze projects and make informed trading decisions. Highly recommended!"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-img">A</div>
+            <div class="author-details">
+              <h4>Amit Kumar</h4>
+              <p>Crypto Trading Student</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Me</h2>
+        <p>Reach out to discuss which course is right for you or to ask any questions</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:mohitparsad371@gmail.com">mohitparsad371@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Phone</h3>
+              <a href="tel:+918595366682">+91 8595366682</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="contact-details">
+              <h3>WhatsApp</h3>
+              <a href="https://wa.me/918595366682" target="_blank">Message directly</a>
+            </div>
+          </div>
+          
+          <div class="contact-method">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Location</h3>
+              <p>Delhi, India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="logo">Mohit<span>Prasad</span></div>
+        <p>Practical skills for real-world success</p>
+        
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/918595366682" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2023 Mohit Prasad Services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/918595366682" class="whatsapp-float" target="_blank">💬</a>
+  <a href="https://wa.me/918595366682" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
+  <script>
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+  </script>
 </body>
-</html>
+            </html>
