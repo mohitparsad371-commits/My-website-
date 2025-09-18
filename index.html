@@ -3,210 +3,224 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Futuristic Website</title>
+  <title>Mohit Prasad Services</title>
   <style>
-    * {margin:0; padding:0; box-sizing:border-box;}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      font-family: "Poppins", sans-serif;
-      background:#0a0a0a;
-      color:white;
-      overflow-x:hidden;
+      background: #0d1117;
+      color: #fff;
     }
 
-    /* Loader */
-    #loader {
-      position:fixed; top:0; left:0;
-      width:100%; height:100%;
-      background:black;
-      display:flex; align-items:center; justify-content:center;
-      z-index:9999;
-    }
-    #loader h1 {
-      font-size:2rem; color:#00ffcc;
-      animation: blink 1.2s infinite;
-    }
-    @keyframes blink {0%,100%{opacity:1;}50%{opacity:0.3;}}
-
-    /* Particle background */
-    #particles {
-      position:fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      z-index:-1;
-      background:black;
-    }
-
-    /* Header */
     header {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:20px 50px;
-      position:fixed; width:100%; top:0; left:0;
-      z-index:1000;
-      backdrop-filter:blur(15px);
-      background:rgba(255,255,255,0.05);
-      border-bottom:1px solid rgba(255,255,255,0.1);
+      background: #000;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
-    header .logo {display:flex; align-items:center;}
-    header .logo img {width:45px; margin-right:10px; filter:drop-shadow(0 0 5px #00ffcc);}
-    header nav a {
-      margin-left:25px; text-decoration:none; color:white; font-weight:500;
-      transition:0.3s;
-    }
-    header nav a:hover {color:#00ffcc;}
 
-    /* Hero */
+    header a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: #00e676;
+    }
+
     .hero {
-      height:100vh; display:flex; align-items:center; justify-content:center;
-      text-align:center; padding:0 20px;
-      opacity:0; transform:translateY(50px);
-      transition:all 1.2s ease;
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #004d40, #009688);
     }
-    .hero.show {opacity:1; transform:translateY(0);}
-    .hero-content {
-      background:rgba(255,255,255,0.08);
-      backdrop-filter:blur(15px);
-      border-radius:20px;
-      padding:50px;
-      box-shadow:0 8px 32px rgba(0,0,0,0.5);
-      animation: fadeIn 2s ease;
-    }
-    .hero h1 {font-size:3.5rem; color:#00ffcc; margin-bottom:20px;}
-    .hero p {font-size:1.3rem; color:#eee;}
-    @keyframes fadeIn {from{opacity:0; transform:scale(0.9);}to{opacity:1; transform:scale(1);}}
 
-    /* Sections */
-    section {
-      padding:120px 50px;
-      opacity:0; transform:translateY(50px);
-      transition:all 1s ease;
-      background:rgba(255,255,255,0.03);
-      border-radius:20px;
-      margin:60px auto;
-      max-width:1000px;
-      backdrop-filter:blur(10px);
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 15px;
+      font-weight: 700;
     }
-    section.show {opacity:1; transform:translateY(0);}
-    section h2 {font-size:2.8rem; margin-bottom:20px; color:#00ffcc; text-align:center;}
-    section p {font-size:1.2rem; color:#ddd; text-align:center; line-height:1.8;}
 
-    /* Footer */
-    footer {text-align:center; padding:30px; background:#000; color:#888; margin-top:50px;}
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: #00c853;
+      padding: 12px 28px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #00a43a;
+    }
+
+    .courses {
+      padding: 50px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .course-card {
+      background: linear-gradient(145deg, #161b22, #1f2937);
+      padding: 20px;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    }
+
+    .course-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .course-card h3 {
+      margin: 0;
+      color: #00e676;
+      font-size: 20px;
+    }
+
+    .course-card p {
+      font-size: 14px;
+      text-align: center;
+      color: #c9d1d9;
+    }
+
+    .contact {
+      background: #111;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 15px;
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .contact p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .contact a {
+      color: #00e676;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      text-decoration: none;
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
   </style>
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader"><h1>Loading...</h1></div>
 
-  <!-- Particle Canvas -->
-  <canvas id="particles"></canvas>
-
-  <!-- Header -->
   <header>
-    <div class="logo">
-      <img src="https://via.placeholder.com/45/00ffcc/000000?text=Λ" alt="Logo">
-      <h2>StarSite</h2>
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
   </header>
 
-  <!-- Hero -->
-  <div class="hero" id="home">
-    <div class="hero-content">
-      <h1>Welcome to the Future</h1>
-      <p>A futuristic website with stars, glassmorphism & parallax effects</p>
+  <section class="hero">
+    <h1>Mohit Prasad Services</h1>
+    <p>Affordable & Practical Training in MS Excel, Stock Market, Crypto Trading, Freelancing & Basic Computer in Delhi.</p>
+    <a href="#services" class="btn">Explore Courses</a>
+  </section>
+
+  <section id="services" class="courses">
+    <div class="course-card">
+      <img src="https://img.icons8.com/color/96/ms-excel.png" alt="MS Excel">
+      <h3>MS Excel</h3>
+      <p>Master Excel from basics to advanced with real-world projects.</p>
     </div>
-  </div>
 
-  <!-- Sections -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>We design futuristic websites with interactive animations, parallax scrolling, particle effects and stylish glass designs to give your brand a cutting-edge look.</p>
+    <div class="course-card">
+      <img src="https://img.icons8.com/color/96/stocks.png" alt="Stock Market">
+      <h3>Stock Market</h3>
+      <p>Learn stock trading strategies & long-term investment methods.</p>
+    </div>
+
+    <div class="course-card">
+      <img src="https://img.icons8.com/color/96/cryptocurrency.png" alt="Crypto Trading">
+      <h3>Crypto Trading</h3>
+      <p>Understand cryptocurrency trading, wallets & risk management.</p>
+    </div>
+
+    <div class="course-card">
+      <img src="https://img.icons8.com/color/96/freelance.png" alt="Freelancing">
+      <h3>Freelancing</h3>
+      <p>Step-by-step guide to freelancing & building a global career.</p>
+    </div>
+
+    <div class="course-card">
+      <img src="https://img.icons8.com/color/96/computer.png" alt="Basic Computer">
+      <h3>Basic Computer</h3>
+      <p>Learn essential computer skills, MS Office & internet usage.</p>
+    </div>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <p>We offer premium web design, animated UI, SEO optimization, and branding solutions for businesses aiming to dominate the digital world.</p>
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:mohitparsad371@gmail.com">mohitparsad371@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/918595366682" target="_blank">+91 8595366682</a></p>
   </section>
 
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email us at <b>info@example.com</b> or follow us on social media to start your digital journey.</p>
-  </section>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/918595366682" class="whatsapp-float" target="_blank">💬</a>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 StarSite. All rights reserved.</p>
-  </footer>
-
-  <script>
-    // Loader hide
-    window.addEventListener("load", () => {
-      document.getElementById("loader").style.display = "none";
-      document.querySelector(".hero").classList.add("show");
-    });
-
-    // Scroll animation
-    const sections = document.querySelectorAll("section");
-    window.addEventListener("scroll", () => {
-      const trigger = window.innerHeight / 1.2;
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect().top;
-        if(rect < trigger) sec.classList.add("show");
-      });
-    });
-
-    // Particle Background
-    const canvas = document.getElementById("particles");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const stars = [];
-    for (let i = 0; i < 150; i++) {
-      stars.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: Math.random() * 1.5,
-        speed: Math.random() * 0.3 + 0.05
-      });
-    }
-
-    function drawStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#00ffcc";
-      stars.forEach(star => {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fill();
-      });
-    }
-
-    function updateStars() {
-      stars.forEach(star => {
-        star.y += star.speed;
-        if (star.y > canvas.height) {
-          star.y = 0;
-          star.x = Math.random() * canvas.width;
-        }
-      });
-    }
-
-    function animate() {
-      drawStars();
-      updateStars();
-      requestAnimationFrame(animate);
-    }
-    animate();
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    });
-  </script>
 </body>
 </html>
