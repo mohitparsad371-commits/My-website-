@@ -3,147 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <title>Futuristic Website</title>
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * {margin:0; padding:0; box-sizing:border-box;}
     body {
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: white;
-      overflow-x: hidden;
+      font-family: "Poppins", sans-serif;
+      background:#0a0a0a;
+      color:white;
+      overflow-x:hidden;
     }
 
-    /* Loader animation */
+    /* Loader */
     #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
+      position:fixed; top:0; left:0;
+      width:100%; height:100%;
+      background:black;
+      display:flex; align-items:center; justify-content:center;
+      z-index:9999;
     }
     #loader h1 {
-      font-size: 2rem;
+      font-size:2rem; color:#00ffcc;
       animation: blink 1.2s infinite;
-      color: #00ffcc;
     }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.3; }
+    @keyframes blink {0%,100%{opacity:1;}50%{opacity:0.3;}}
+
+    /* Particle background */
+    #particles {
+      position:fixed;
+      top:0; left:0;
+      width:100%; height:100%;
+      z-index:-1;
+      background:black;
     }
 
     /* Header */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 50px;
-      background: rgba(0,0,0,0.7);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 50px;
+      position:fixed; width:100%; top:0; left:0;
+      z-index:1000;
+      backdrop-filter:blur(15px);
+      background:rgba(255,255,255,0.05);
+      border-bottom:1px solid rgba(255,255,255,0.1);
     }
-    header .logo {
-      display: flex;
-      align-items: center;
-    }
-    header .logo img {
-      width: 40px;
-      margin-right: 10px;
-    }
+    header .logo {display:flex; align-items:center;}
+    header .logo img {width:45px; margin-right:10px; filter:drop-shadow(0 0 5px #00ffcc);}
     header nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
+      margin-left:25px; text-decoration:none; color:white; font-weight:500;
+      transition:0.3s;
     }
-    header nav a:hover {
-      color: #00ffcc;
-    }
+    header nav a:hover {color:#00ffcc;}
 
-    /* Hero section */
+    /* Hero */
     .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-      background: linear-gradient(120deg, #001f3f, #111);
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s ease;
+      height:100vh; display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:0 20px;
+      opacity:0; transform:translateY(50px);
+      transition:all 1.2s ease;
     }
-    .hero.show {
-      opacity: 1;
-      transform: translateY(0);
+    .hero.show {opacity:1; transform:translateY(0);}
+    .hero-content {
+      background:rgba(255,255,255,0.08);
+      backdrop-filter:blur(15px);
+      border-radius:20px;
+      padding:50px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.5);
+      animation: fadeIn 2s ease;
     }
-    .hero h1 {
-      font-size: 3rem;
-      color: #00ffcc;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      margin-top: 15px;
-      color: #ddd;
-    }
+    .hero h1 {font-size:3.5rem; color:#00ffcc; margin-bottom:20px;}
+    .hero p {font-size:1.3rem; color:#eee;}
+    @keyframes fadeIn {from{opacity:0; transform:scale(0.9);}to{opacity:1; transform:scale(1);}}
 
     /* Sections */
     section {
-      padding: 100px 50px;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 1s ease;
+      padding:120px 50px;
+      opacity:0; transform:translateY(50px);
+      transition:all 1s ease;
+      background:rgba(255,255,255,0.03);
+      border-radius:20px;
+      margin:60px auto;
+      max-width:1000px;
+      backdrop-filter:blur(10px);
     }
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #00ffcc;
-    }
-    section p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      color: #ccc;
-    }
+    section.show {opacity:1; transform:translateY(0);}
+    section h2 {font-size:2.8rem; margin-bottom:20px; color:#00ffcc; text-align:center;}
+    section p {font-size:1.2rem; color:#ddd; text-align:center; line-height:1.8;}
 
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #000;
-      color: #888;
-      margin-top: 50px;
-    }
+    footer {text-align:center; padding:30px; background:#000; color:#888; margin-top:50px;}
   </style>
 </head>
 <body>
   <!-- Loader -->
-  <div id="loader">
-    <h1>Loading...</h1>
-  </div>
+  <div id="loader"><h1>Loading...</h1></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particles"></canvas>
 
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="https://via.placeholder.com/40/00ffcc/000000?text=Λ" alt="Logo">
-      <h2>MyWebsite</h2>
+      <img src="https://via.placeholder.com/45/00ffcc/000000?text=Λ" alt="Logo">
+      <h2>StarSite</h2>
     </div>
     <nav>
       <a href="#home">Home</a>
@@ -153,35 +114,33 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <div class="hero" id="home">
-    <div>
-      <h1>Welcome to My Website</h1>
-      <p>This is a modern animated website example.</p>
+    <div class="hero-content">
+      <h1>Welcome to the Future</h1>
+      <p>A futuristic website with stars, glassmorphism & parallax effects</p>
     </div>
   </div>
 
-  <!-- About Section -->
+  <!-- Sections -->
   <section id="about">
     <h2>About Us</h2>
-    <p>We build amazing websites with animations, clean design, and modern layouts that look professional on all devices.</p>
+    <p>We design futuristic websites with interactive animations, parallax scrolling, particle effects and stylish glass designs to give your brand a cutting-edge look.</p>
   </section>
 
-  <!-- Services Section -->
   <section id="services">
     <h2>Our Services</h2>
-    <p>From responsive websites to full business solutions, we provide everything with a creative touch.</p>
+    <p>We offer premium web design, animated UI, SEO optimization, and branding solutions for businesses aiming to dominate the digital world.</p>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>For business inquiries, reach out to us at <b>info@example.com</b></p>
+    <p>Email us at <b>info@example.com</b> or follow us on social media to start your digital journey.</p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 MyWebsite. All rights reserved.</p>
+    <p>© 2025 StarSite. All rights reserved.</p>
   </footer>
 
   <script>
@@ -197,10 +156,56 @@
       const trigger = window.innerHeight / 1.2;
       sections.forEach(sec => {
         const rect = sec.getBoundingClientRect().top;
-        if(rect < trigger) {
-          sec.classList.add("show");
+        if(rect < trigger) sec.classList.add("show");
+      });
+    });
+
+    // Particle Background
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const stars = [];
+    for (let i = 0; i < 150; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.5,
+        speed: Math.random() * 0.3 + 0.05
+      });
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#00ffcc";
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+      });
+    }
+
+    function updateStars() {
+      stars.forEach(star => {
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
         }
       });
+    }
+
+    function animate() {
+      drawStars();
+      updateStars();
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
   </script>
 </body>
