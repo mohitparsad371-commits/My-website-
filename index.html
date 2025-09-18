@@ -3,310 +3,138 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="googleab29e5730f7fb514"/>
-  <meta name="description" content="Learn MS Excel, Crypto Trading, Stock Market, Freelancing, and Basic Computer Skills in Delhi with Mohit Prasad Services. Affordable, practical online courses.">
-  <meta name="keywords" content="MS Excel course Delhi, crypto trading course, stock market course, freelancing guide, basic computer course, Mohit Prasad Services">
-  <meta property="og:title" content="Mohit Prasad Services - Skill Development Courses in Delhi">
-  <meta property="og:description" content="Boost your career with affordable courses in Excel, Stock Market, Crypto Trading, Freelancing, and more.">
-  <meta property="og:image" content="https://yourwebsite.com/images/og-banner.webp">
-  <meta property="og:url" content="https://yourwebsite.com">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://*.randomuser.me https://yourwebsite.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; form-action 'self' https://wa.me;">
-  <title>MS Excel, Stock Market & Crypto Trading Courses | Mohit Prasad Services</title>
-  <link rel="icon" href="https://yourwebsite.com/favicon.ico" type="image/x-icon">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" as="style" onload="this.rel='stylesheet'">
+  <title>Affordable MS Excel, Stock Market & Crypto Courses in Delhi | MPS</title>
+  <meta name="description" content="Join Mohit Prasad Services in Delhi. Learn MS Excel, Stock Market, Crypto Trading, Freelancing & Basic Computer. Affordable fees & 100% practical training.">
+  <meta name="keywords" content="MS Excel course Delhi, Stock Market training, Crypto trading course Delhi, Basic computer course, Freelancing guidance India, Mohit Prasad Services">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      line-height: 1.6;
-      background: #f5f5f5;
-      transition: background 0.3s, color 0.3s;
-    }
-    body.dark-mode { background: #222; color: #ddd; }
-    body.dark-mode .course-card, body.dark-mode .contact form { background: #333; color: #ddd; }
-    body.dark-mode .course-card button, body.dark-mode .contact button { background: #ff5e00; }
-    body.dark-mode .course-card button:hover, body.dark-mode .contact button:hover { background: #e55000; }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {font-family: Arial, sans-serif; background: #f5f7fa; color: #333; line-height: 1.6;}
+
     header {
-      background: #111; color: #fff; text-align: center; padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, #2c3e50, #1abc9c);
+      color: #fff; text-align: center; padding: 40px 20px;
+      animation: fadeIn 1.5s ease;
     }
-    header img { max-width: 220px; margin-bottom: 10px; }
-    header p { font-size: 1.1rem; font-weight: 500; }
+    header h1 {font-size: 36px; margin-bottom: 10px;}
+    header p {font-size: 18px;}
+
     nav {
-      background: #111; color: #fff; position: sticky; top: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;
+      background: #34495e; display: flex; justify-content: center; flex-wrap: wrap;
     }
-    nav .logo { font-weight: bold; font-size: 1.2rem; }
-    nav ul { list-style: none; display: flex; }
-    nav ul li { margin: 0 10px; }
-    nav ul li a {
-      color: #fff; text-decoration: none; font-weight: 500; padding: 8px 12px;
-      transition: background 0.3s;
+    nav a {
+      color: #fff; padding: 12px 20px; text-decoration: none; transition: 0.3s;
     }
-    nav ul li a:hover, nav ul li a:focus { background: #ff5e00; border-radius: 5px; }
-    nav .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; background: none; border: none; color: #fff; }
-    nav button#dark-toggle {
-      background: transparent; border: none; color: #fff; cursor: pointer;
-      margin-left: 15px; font-size: 1rem;
+    nav a:hover {background: #1abc9c; border-radius: 5px;}
+
+    .container {max-width: 1100px; margin: 20px auto; padding: 0 20px;}
+
+    .service {
+      background: #fff; margin-bottom: 30px; padding: 20px; border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: slideUp 1s ease;
     }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://yourwebsite.com/images/hero-bg.webp');
-      background-size: cover; background-position: center; color: #fff; text-align: center; padding: 100px 20px;
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-    .hero p { font-size: 1.2rem; max-width: 700px; margin: auto; }
-    .hero button {
-      margin-top: 20px; padding: 15px 30px; background: #ff5e00; color: #fff;
-      border: none; border-radius: 5px; cursor: pointer; font-size: 1.1rem;
-      transition: background 0.3s;
+    .service h2 {margin-top: 0; color: #2c3e50;}
+    .service img {max-width: 100%; border-radius: 8px; margin: 10px 0;}
+
+    .cta {
+      display: inline-block; background: #1abc9c; color: #fff;
+      padding: 12px 25px; border-radius: 5px; text-decoration: none;
+      transition: 0.3s;
     }
-    .hero button:hover, .hero button:focus { background: #e55000; }
-    .courses { padding: 60px 20px; max-width: 1200px; margin: auto; }
-    .courses h2 { text-align: center; font-size: 2.5rem; margin-bottom: 40px; color: #111; }
-    .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .course-card {
-      background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
+    .cta:hover {background: #16a085;}
+
+    footer {
+      background: #2c3e50; color: #fff; text-align: center; padding: 20px; margin-top: 30px;
     }
-    .course-card:hover, .course-card:focus-within { transform: translateY(-10px); }
-    .course-card img { width: 100%; height: 200px; object-fit: cover; }
-    .course-card h3 { font-size: 1.5rem; padding: 15px; color: #111; }
-    .course-card p { padding: 0 15px; color: #666; font-size: 0.9rem; }
-    .course-card .stars { padding: 0 15px; color: gold; }
-    .course-card .price { padding: 10px 15px; font-weight: bold; color: #ff5e00; }
-    .course-card button {
-      width: 100%; background: #ff5e00; color: #fff; border: none;
-      padding: 15px; font-size: 1rem; cursor: pointer; border-radius: 0 0 10px 10px;
+
+    /* Contact Form */
+    form {
+      display: flex; flex-direction: column; gap: 15px;
     }
-    .course-card button:hover, .course-card button:focus { background: #e55000; }
-    .testimonials { padding: 60px 20px; background: #f5f5f5; text-align: center; }
-    .testimonials h2 { font-size: 2.5rem; margin-bottom: 40px; }
-    .testimonial-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;
-      max-width: 1200px; margin: auto;
+    form input, form textarea {
+      padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 100%;
     }
-    .testimonial-card {
-      background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    form button {
+      background: #1abc9c; color: #fff; padding: 12px; border: none;
+      border-radius: 5px; cursor: pointer; transition: 0.3s;
     }
-    .testimonial-card img { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px; }
-    .testimonial-card p { font-style: italic; color: #666; }
-    .testimonial-card cite { display: block; margin-top: 10px; font-weight: bold; color: #ff5e00; }
-    .about { padding: 60px 20px; text-align: center; background: #f5f5f5; }
-    .about h2 { font-size: 2.5rem; margin-bottom: 20px; }
-    .about p { max-width: 800px; margin: auto; font-size: 1.1rem; color: #666; }
-    .contact { padding: 60px 20px; background: #111; color: #fff; text-align: center; }
-    .contact form { max-width: 600px; margin: auto; background: #fff; padding: 20px; border-radius: 10px; }
-    .contact input, .contact select, .contact textarea {
-      width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;
+    form button:hover {background: #16a085;}
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {opacity: 0;} to {opacity: 1;}
     }
-    .contact button {
-      background: #ff5e00; color: #fff; border: none; padding: 15px; width: 100%; border-radius: 5px; cursor: pointer;
-    }
-    .contact button:hover, .contact button:focus { background: #e55000; }
-    footer { background: #111; color: #fff; text-align: center; padding: 20px; }
-    footer a { color: #ff5e00; text-decoration: none; margin: 0 10px; }
-    @media (max-width: 768px) {
-      nav ul { display: none; flex-direction: column; background: #111; width: 100%; position: absolute; top: 50px; left: 0; }
-      nav ul.show { display: flex; }
-      nav .menu-toggle { display: block; }
-      .hero h1 { font-size: 2rem; }
-      .courses h2, .contact h2, .about h2, .testimonials h2 { font-size: 2rem; }
+    @keyframes slideUp {
+      from {transform: translateY(30px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="https://yourwebsite.com/images/logo.webp" alt="Mohit Prasad Services Logo">
-    <p>Seekho, Kamao, Badho! | +91 8595366682</p>
+    <h1>Mohit Prasad Services (MPS)</h1>
+    <p>Affordable & Practical Training in Delhi</p>
   </header>
-  <nav role="navigation" aria-label="Main navigation">
-    <div class="logo">MPS</div>
-    <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#courses">Courses</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><button id="dark-toggle" aria-label="Toggle dark mode" aria-pressed="false">🌙 Dark Mode</button></li>
-    </ul>
+
+  <nav>
+    <a href="#excel">MS Excel</a>
+    <a href="#stock">Stock Market</a>
+    <a href="#crypto">Crypto</a>
+    <a href="#freelancing">Freelancing</a>
+    <a href="#computer">Basic Computer</a>
+    <a href="#contact">Contact</a>
   </nav>
-  <section class="hero" id="home">
-    <h1>Boost Your Skills with Mohit Prasad Services</h1>
-    <p>Learn MS Excel, Stock Market, Crypto Trading, Freelancing, and Basic Computer from experts in Delhi. Affordable & 100% practical courses.</p>
-    <button onclick="window.open('https://wa.me/918595366682?text=Hi! I want to join a course','_blank','noopener')">📲 Join Now on WhatsApp</button>
-  </section>
-  <section class="courses" id="courses">
-    <h2>Our Premium Courses</h2>
-    <div class="course-grid">
-      <div class="course-card">
-        <img src="https://yourwebsite.com/images/excel-course.webp" alt="MS Excel Training Course">
-        <h3>MS Excel Training</h3>
-        <p>Master data analysis with Excel’s powerful tools.</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <div class="price">₹499</div>
-        <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for MS Excel Training','_blank','noopener')">Enroll Now</button>
-      </div>
-      <div class="course-card">
-        <img src="https://yourwebsite.com/images/computer-course.webp" alt="Basic Computer Course">
-        <h3>Basic Computer Course</h3>
-        <p>Learn Word, PowerPoint, and internet basics for career growth.</p>
-        <div class="stars">⭐⭐⭐⭐</div>
-        <div class="price">₹599</div>
-        <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for Basic Computer Course','_blank','noopener')">Enroll Now</button>
-      </div>
-      <div class="course-card">
-        <img src="https://yourwebsite.com/images/freelancing-course.webp" alt="Freelancing Guidance Course">
-        <h3>Freelancing Guidance</h3>
-        <p>Build a global freelancing career with expert tips.</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <div class="price">₹799</div>
-        <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for Freelancing Guidance','_blank','noopener')">Enroll Now</button>
-      </div>
-      <div class="course-card">
-        <img src="https://yourwebsite.com/images/crypto-course.webp" alt="Crypto Trading Basics Course">
-        <h3>Crypto Trading Basics</h3>
-        <p>Understand crypto markets and trading strategies.</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <div class="price">₹999</div>
-        <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for Crypto Trading Basics','_blank','noopener')">Enroll Now</button>
-      </div>
-      <div class="course-card">
-        <img src="https://yourwebsite.com/images/stock-market-course.webp" alt="Stock Market Course">
-        <h3>Stock Market Course</h3>
-        <p>Learn trading and investment for wealth creation.</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-        <div class="price">₹999</div>
-        <button onclick="window.open('https://wa.me/918595366682?text=I want to enroll for Stock Market Course','_blank','noopener')">Enroll Now</button>
-      </div>
+
+  <div class="container">
+    <div class="service" id="excel">
+      <h2>MS Excel Course</h2>
+      <img src="https://source.unsplash.com/800x400/?excel,spreadsheet" alt="MS Excel">
+      <p>Learn MS Excel from basics to advanced. Practical assignments and real-life projects included.</p>
     </div>
-  </section>
-  <section class="testimonials" id="testimonials">
-    <h2>What Our Students Say</h2>
-    <div class="testimonial-grid">
-      <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Photo of Rajesh, MS Excel course participant">
-        <p>"The MS Excel course transformed my data skills!"</p>
-        <cite>- Rajesh K., Delhi</cite>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Photo of Priya, Crypto Trading course participant">
-        <p>"Crypto Trading basics were easy to understand and practical."</p>
-        <cite>- Priya S., New Delhi</cite>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Photo of Amit, Freelancing course participant">
-        <p>"Freelancing guidance helped me land my first client!"</p>
-        <cite>- Amit P., India</cite>
-      </div>
+
+    <div class="service" id="stock">
+      <h2>Stock Market Training</h2>
+      <img src="https://source.unsplash.com/800x400/?stock,market" alt="Stock Market">
+      <p>Understand stock market basics, trading strategies, and investment methods. Start earning with confidence.</p>
     </div>
-  </section>
-  <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>Mohit Prasad Services, based in New Delhi, offers high-quality training in MS Excel, Basic Computer Courses, Freelancing Guidance, Crypto Trading, and Stock Market. Our mission is to empower individuals with skills for career growth and financial independence. Customer satisfaction is our priority!</p>
-  </section>
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <form onsubmit="sendMessage(event)">
-      <input type="text" id="name" placeholder="Your Name" required aria-label="Your Name" maxlength="50">
-      <input type="email" id="email" placeholder="Your Email" required aria-label="Your Email" maxlength="100">
-      <select id="course" required aria-label="Select Course">
-        <option value="">Select Course</option>
-        <option>MS Excel Training</option>
-        <option>Basic Computer Course</option>
-        <option>Freelancing Guidance</option>
-        <option>Crypto Trading Basics</option>
-        <option>Stock Market Course</option>
-      </select>
-      <textarea id="message" placeholder="Your Message" rows="4" aria-label="Your Message" maxlength="500"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-    <noscript>
-      <p>JavaScript is disabled. Please contact us at <a href="mailto:mohitparsad371@gmail.com" rel="noopener">mohitparsad371@gmail.com</a>.</p>
-    </noscript>
-  </section>
+
+    <div class="service" id="crypto">
+      <h2>Crypto Trading Course</h2>
+      <img src="https://source.unsplash.com/800x400/?crypto,bitcoin" alt="Crypto">
+      <p>Learn the fundamentals of cryptocurrency, trading platforms, and risk management.</p>
+    </div>
+
+    <div class="service" id="freelancing">
+      <h2>Freelancing Guidance</h2>
+      <img src="https://source.unsplash.com/800x400/?freelance,work" alt="Freelancing">
+      <p>Step-by-step guide to start freelancing. Build a portfolio, find clients, and earn globally.</p>
+    </div>
+
+    <div class="service" id="computer">
+      <h2>Basic Computer Course</h2>
+      <img src="https://source.unsplash.com/800x400/?computer,technology" alt="Basic Computer">
+      <p>Learn computer fundamentals, internet usage, MS Office, and daily productivity tools.</p>
+    </div>
+
+    <div class="service" id="contact">
+      <h2>Contact Us</h2>
+      <form action="mailto:info@mps.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top:10px;">Or email us at <a href="mailto:info@mps.com">info@mps.com</a></p>
+    </div>
+  </div>
+
   <footer>
-    <p>&copy; 2025 Mohit Prasad Services. All Rights Reserved.</p>
-    <p>Email: <a href="mailto:mohitparsad371@gmail.com" rel="noopener">mohitparsad371@gmail.com</a> | Phone: +91 8595366682 | New Delhi, India</p>
-    <p>Follow us: 
-      <a href="https://yourwebsite.com/facebook" rel="noopener" aria-label="Facebook">Facebook</a> | 
-      <a href="https://yourwebsite.com/instagram" rel="noopener" aria-label="Instagram">Instagram</a> | 
-      <a href="https://yourwebsite.com/linkedin" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
-    </p>
+    <p>&copy; 2025 Mohit Prasad Services | All Rights Reserved</p>
   </footer>
-  <script>
-    const darkToggle = document.getElementById('dark-toggle');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('nav ul');
-
-    darkToggle.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('dark-mode');
-      darkToggle.setAttribute('aria-pressed', isDark);
-      darkToggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    });
-
-    menuToggle.addEventListener('click', () => {
-      const isExpanded = navLinks.classList.toggle('show');
-      menuToggle.setAttribute('aria-expanded', isExpanded);
-      menuToggle.textContent = isExpanded ? '✖' : '☰';
-    });
-
-    function sendMessage(event) {
-      event.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const course = document.getElementById('course').value;
-      const message = document.getElementById('message').value.trim();
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (!name || !email || !course) {
-        alert('Please fill all required fields!');
-        return;
-      }
-      if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address!');
-        return;
-      }
-      if (name.length > 50 || email.length > 100 || message.length > 500) {
-        alert('Input exceeds maximum length!');
-        return;
-      }
-
-      const text = `New Enquiry%0AName: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0ACourse: ${encodeURIComponent(course)}%0AMessage: ${encodeURIComponent(message)}`;
-      try {
-        window.open(`https://wa.me/918595366682?text=${text}`, '_blank', 'noopener');
-        document.querySelector('form').reset();
-        alert(`Thank you, ${name}! Your enquiry has been sent!`);
-      } catch (error) {
-        alert('Error sending message. Please try emailing mohitparsad371@gmail.com.');
-      }
-    }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Mohit Prasad Services",
-    "url": "https://yourwebsite.com",
-    "logo": "https://yourwebsite.com/images/logo.webp",
-    "description": "Learn MS Excel, Crypto Trading, Stock Market, Freelancing, and Basic Computer Skills in Delhi with Mohit Prasad Services.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "New Delhi",
-      "addressCountry": "India"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-8595366682",
-      "contactType": "Customer Service",
-      "email": "mohitparsad371@gmail.com"
-    },
-    "sameAs": [
-      "https://yourwebsite.com/facebook",
-      "https://yourwebsite.com/instagram",
-      "https://yourwebsite.com/linkedin"
-    ]
-  }
-  </script>
 </body>
 </html>
