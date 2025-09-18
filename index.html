@@ -4,14 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit Prasad Services</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
       background: #0d1117;
       color: #fff;
     }
+
     header {
       background: #000;
       padding: 15px;
@@ -22,65 +29,121 @@
       top: 0;
       z-index: 100;
     }
+
     header a {
       color: white;
       text-decoration: none;
       font-size: 18px;
+      font-weight: 600;
+      transition: color 0.3s;
     }
+
+    header a:hover {
+      color: #00e676;
+    }
+
     .hero {
       text-align: center;
       padding: 80px 20px;
       background: linear-gradient(135deg, #004d40, #009688);
     }
+
     .hero h1 {
-      font-size: 36px;
+      font-size: 40px;
       margin-bottom: 15px;
+      font-weight: 700;
     }
+
     .hero p {
       font-size: 18px;
       margin-bottom: 25px;
     }
+
     .btn {
       background: #00c853;
-      padding: 12px 24px;
+      padding: 12px 28px;
       border: none;
-      border-radius: 5px;
+      border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
       color: white;
       text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
     }
+
+    .btn:hover {
+      background: #00a43a;
+    }
+
     .courses {
-      padding: 40px 20px;
+      padding: 50px 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
     }
+
     .course-card {
-      background: #161b22;
-      margin: 15px 0;
+      background: linear-gradient(145deg, #161b22, #1f2937);
       padding: 20px;
-      border-radius: 12px;
+      border-radius: 16px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       gap: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    }
+
     .course-card img {
-      width: 60px;
-      height: 60px;
-      border-radius: 10px;
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
       object-fit: cover;
     }
+
     .course-card h3 {
       margin: 0;
       color: #00e676;
+      font-size: 20px;
     }
+
+    .course-card p {
+      font-size: 14px;
+      text-align: center;
+      color: #c9d1d9;
+    }
+
     .contact {
       background: #111;
-      padding: 30px;
+      padding: 40px 20px;
       text-align: center;
     }
+
     .contact h2 {
       margin-bottom: 15px;
+      font-size: 26px;
+      font-weight: 700;
     }
+
+    .contact p {
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    .contact a {
+      color: #00e676;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
     .whatsapp-float {
       position: fixed;
       width: 60px;
@@ -97,6 +160,11 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
       text-decoration: none;
       z-index: 1000;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
@@ -116,49 +184,39 @@
   <section id="services" class="courses">
     <div class="course-card">
       <img src="https://img.icons8.com/color/96/ms-excel.png" alt="MS Excel">
-      <div>
-        <h3>MS Excel</h3>
-        <p>Master Excel from basics to advanced with real-world projects.</p>
-      </div>
+      <h3>MS Excel</h3>
+      <p>Master Excel from basics to advanced with real-world projects.</p>
     </div>
 
     <div class="course-card">
       <img src="https://img.icons8.com/color/96/stocks.png" alt="Stock Market">
-      <div>
-        <h3>Stock Market</h3>
-        <p>Learn stock trading strategies & long-term investment methods.</p>
-      </div>
+      <h3>Stock Market</h3>
+      <p>Learn stock trading strategies & long-term investment methods.</p>
     </div>
 
     <div class="course-card">
       <img src="https://img.icons8.com/color/96/cryptocurrency.png" alt="Crypto Trading">
-      <div>
-        <h3>Crypto Trading</h3>
-        <p>Understand cryptocurrency trading, wallets & risk management.</p>
-      </div>
+      <h3>Crypto Trading</h3>
+      <p>Understand cryptocurrency trading, wallets & risk management.</p>
     </div>
 
     <div class="course-card">
       <img src="https://img.icons8.com/color/96/freelance.png" alt="Freelancing">
-      <div>
-        <h3>Freelancing</h3>
-        <p>Step-by-step guide to freelancing & building a global career.</p>
-      </div>
+      <h3>Freelancing</h3>
+      <p>Step-by-step guide to freelancing & building a global career.</p>
     </div>
 
     <div class="course-card">
       <img src="https://img.icons8.com/color/96/computer.png" alt="Basic Computer">
-      <div>
-        <h3>Basic Computer</h3>
-        <p>Learn essential computer skills, MS Office & internet usage.</p>
-      </div>
+      <h3>Basic Computer</h3>
+      <p>Learn essential computer skills, MS Office & internet usage.</p>
     </div>
   </section>
 
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:mohitparsad371@gmail.com" style="color:#00e676;">mohitparsad371@gmail.com</a></p>
-    <p>WhatsApp: <a href="https://wa.me/918595366682" style="color:#00e676;">+91 8595366682</a></p>
+    <p>Email: <a href="mailto:mohitparsad371@gmail.com">mohitparsad371@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/918595366682" target="_blank">+91 8595366682</a></p>
   </section>
 
   <!-- WhatsApp Floating Button -->
