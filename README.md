@@ -773,4 +773,115 @@
         </div>
         <div class="contact-details">
           <h3>Twitter (X)</h3>
-          <a href="https://x.com/element_syco?t=dmRw9UEZRQXuEy_S4iBe_g&s=09" target="_blank">F
+          <a href="https://x.com/element_syco?t=dmRw9UEZRQXuEy_S4iBe_g&s=09" target="_blank">Follow on X</a>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Facebook</h3>
+          <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank">Follow Page</a>
+        </div>
+      </div>
+      
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fab fa-linkedin"></i>
+        </div>
+        <div class="contact-details">
+          <h3>LinkedIn</h3>
+          <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank">Connect with me</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="logo">Mohit<span>Prasad</span></div>
+        <p>Practical skills for real-world success</p>
+        
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          
+          <a href="https://x.com/element_syco?t=dmRw9UEZRQXuEy_S4iBe_g&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+          
+          <a href="https://www.instagram.com/mohit_shah0002?igsh=bDU5NHM3ZTF2cTVj" target="_blank"><i class="fab fa-instagram"></i></a>
+          
+          <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          
+          <a href="https://wa.me/918595366682" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Mohit Prasad Services. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/918595366682" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+    
+    // Close menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+      });
+    });
+    
+    // Create animated background circles
+    const animatedBg = document.getElementById('animatedBg');
+    for (let i = 0; i < 10; i++) {
+      const circle = document.createElement('div');
+      circle.classList.add('bg-circle');
+      
+      // Random properties
+      const size = Math.random() * 200 + 50;
+      const posX = Math.random() * 100;
+      const posY = Math.random() * 100;
+      const delay = Math.random() * 15;
+      const duration = Math.random() * 10 + 15;
+      
+      circle.style.width = `${size}px`;
+      circle.style.height = `${size}px`;
+      circle.style.left = `${posX}%`;
+      circle.style.top = `${posY}%`;
+      circle.style.animationDelay = `${delay}s`;
+      circle.style.animationDuration = `${duration}s`;
+      
+      animatedBg.appendChild(circle);
+    }
+    
+    // 3D card flip functionality
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+      });
+      
+      // For touch devices - prevent double tap zoom
+      card.addEventListener('touchstart', function(e) {
+        if (!card.classList.contains('flipped')) {
+          // e.preventDefault(); // Commented out to allow scrolling
+        }
+      }, {passive: true});
+    });
+  </script>
+</body>
+</html>
