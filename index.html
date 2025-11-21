@@ -237,13 +237,15 @@
 
     .card h3 {
       color: #00e676;
-      font-size: 22px;
+      font-size: 20px;
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .card p {
       text-align: center;
       margin-bottom: 15px;
+      font-size: 14px;
     }
 
     .features {
@@ -256,6 +258,7 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       align-items: center;
+      font-size: 14px;
     }
 
     .features li:before {
@@ -308,7 +311,8 @@
       max-width: 800px;
       margin: 0 auto;
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 25px;
     }
 
@@ -317,29 +321,44 @@
       align-items: center;
       justify-content: center;
       gap: 15px;
+      background: rgba(255,255,255,0.05);
+      padding: 15px 25px;
+      border-radius: 10px;
+      min-width: 280px;
+      transition: transform 0.3s;
+    }
+
+    .contact-method:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.1);
     }
 
     .contact-icon {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       background: rgba(0, 230, 118, 0.1);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
+      font-size: 18px;
       color: #00e676;
     }
 
     .contact-details h3 {
       color: #fff;
-      margin-bottom: 5px;
+      margin-bottom: 2px;
+      font-size: 16px;
+      text-align: left;
     }
 
     .contact-details a {
       color: #c9d1d9;
       text-decoration: none;
       transition: color 0.3s;
+      font-size: 14px;
+      text-align: left;
+      display: block;
     }
 
     .contact-details a:hover {
@@ -382,6 +401,7 @@
     .social-links a:hover {
       background: #00e676;
       transform: translateY(-3px);
+      color: #000;
     }
 
     .copyright {
@@ -442,23 +462,6 @@
       .hero h1 {
         font-size: 2rem;
       }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .btn {
-        padding: 10px 20px;
-        margin-bottom: 10px;
-      }
-
-      .btn-secondary {
-        margin-left: 0;
-      }
-
-      .section-title h2 {
-        font-size: 1.8rem;
-      }
       
       .card {
         width: 100%;
@@ -500,18 +503,18 @@
   <section id="services">
     <div class="section-title">
       <h2>Our Services</h2>
-      <p>Comprehensive training programs designed to give you practical, marketable skills</p>
+      <p>10+ Comprehensive training programs to boost your career</p>
     </div>
     
     <div class="card-container">
       <div class="card">
         <div class="card-front">
           <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="MS Excel Course">
+            <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=600&q=80" alt="MS Excel">
           </div>
           <h3>MS Excel Mastery</h3>
           <p>From basic functions to advanced data analysis</p>
-          <p>Tap to see details</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
         </div>
         <div class="card-back">
           <h3>MS Excel Mastery</h3>
@@ -528,11 +531,11 @@
       <div class="card">
         <div class="card-front">
           <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Stock Market Course">
+            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&q=80" alt="Stock Market">
           </div>
           <h3>Stock Market Trading</h3>
           <p>Learn proven strategies for stock trading</p>
-          <p>Tap to see details</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
         </div>
         <div class="card-back">
           <h3>Stock Market Trading</h3>
@@ -549,11 +552,11 @@
       <div class="card">
         <div class="card-front">
           <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1620336655055-bd87ca8f1370?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Crypto Trading Course">
+            <img src="https://images.unsplash.com/photo-1620336655055-bd87ca8f1370?auto=format&fit=crop&w=600&q=80" alt="Crypto Trading">
           </div>
           <h3>Crypto Trading</h3>
           <p>Navigate the world of cryptocurrency</p>
-          <p>Tap to see details</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
         </div>
         <div class="card-back">
           <h3>Crypto Trading</h3>
@@ -570,11 +573,11 @@
       <div class="card">
         <div class="card-front">
           <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Freelancing Course">
+            <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=600&q=80" alt="Freelancing">
           </div>
           <h3>Freelancing</h3>
           <p>Build a successful freelancing career</p>
-          <p>Tap to see details</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
         </div>
         <div class="card-back">
           <h3>Freelancing</h3>
@@ -591,11 +594,11 @@
       <div class="card">
         <div class="card-front">
           <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80" alt="Basic Computer Course">
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80" alt="Basic Computer">
           </div>
           <h3>Basic Computer Skills</h3>
           <p>Essential computer literacy</p>
-          <p>Tap to see details</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
         </div>
         <div class="card-back">
           <h3>Basic Computer Skills</h3>
@@ -608,6 +611,112 @@
           </ul>
         </div>
       </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&w=600&q=80" alt="Digital Marketing">
+          </div>
+          <h3>Digital Marketing</h3>
+          <p>Master SEO, Social Media & Ads</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
+        </div>
+        <div class="card-back">
+          <h3>Digital Marketing</h3>
+          <ul class="features">
+            <li>SEO Optimization</li>
+            <li>Social Media Marketing</li>
+            <li>Google Ads</li>
+            <li>Content Strategy</li>
+            <li>Analytics & Growth</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1626785774573-4b79931256ce?auto=format&fit=crop&w=600&q=80" alt="Graphic Design">
+          </div>
+          <h3>Graphic Design</h3>
+          <p>Create stunning visuals with Canva & PS</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
+        </div>
+        <div class="card-back">
+          <h3>Graphic Design</h3>
+          <ul class="features">
+            <li>Color Theory</li>
+            <li>Logo Design</li>
+            <li>Social Media Posts</li>
+            <li>Canva & Photoshop</li>
+            <li>Portfolio Building</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=600&q=80" alt="Video Editing">
+          </div>
+          <h3>Video Editing</h3>
+          <p>Edit videos for YouTube & Reels</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
+        </div>
+        <div class="card-back">
+          <h3>Video Editing</h3>
+          <ul class="features">
+            <li>Timeline Management</li>
+            <li>Transitions & Effects</li>
+            <li>Color Grading</li>
+            <li>Audio Mixing</li>
+            <li>Exporting Formats</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=600&q=80" alt="Web Development">
+          </div>
+          <h3>Web Development</h3>
+          <p>Build your own websites from scratch</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
+        </div>
+        <div class="card-back">
+          <h3>Web Development</h3>
+          <ul class="features">
+            <li>HTML5 Structure</li>
+            <li>CSS3 Styling</li>
+            <li>Responsive Design</li>
+            <li>Basic JavaScript</li>
+            <li>Hosting & Domains</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-front">
+          <div class="card-image">
+            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80" alt="Python Programming">
+          </div>
+          <h3>Python Programming</h3>
+          <p>Learn coding and automation</p>
+          <p style="color: #00e676; font-size: 12px;">Tap for details</p>
+        </div>
+        <div class="card-back">
+          <h3>Python Programming</h3>
+          <ul class="features">
+            <li>Python Basics</li>
+            <li>Data Structures</li>
+            <li>Loops & Functions</li>
+            <li>Web Scraping</li>
+            <li>Automating Tasks</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -647,6 +756,36 @@
           <a href="https://wa.me/918595366682" target="_blank">Message directly</a>
         </div>
       </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fab fa-instagram"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Instagram</h3>
+          <a href="https://www.instagram.com/mohit_shah0002?igsh=bDU5NHM3ZTF2cTVj" target="_blank">Follow on Insta</a>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fab fa-twitter"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Twitter (X)</h3>
+          <a href="https://x.com/element_syco?t=dmRw9UEZRQXuEy_S4iBe_g&s=09" target="_blank">Follow on X</a>
+        </div>
+      </div>
+
+      <div class="contact-method">
+        <div class="contact-icon">
+          <i class="fab fa-facebook-f"></i>
+        </div>
+        <div class="contact-details">
+          <h3>Facebook</h3>
+          <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank">Follow Page</a>
+        </div>
+      </div>
       
       <div class="contact-method">
         <div class="contact-icon">
@@ -667,10 +806,14 @@
         <p>Practical skills for real-world success</p>
         
         <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          
+          <a href="https://x.com/element_syco?t=dmRw9UEZRQXuEy_S4iBe_g&s=09" target="_blank"><i class="fab fa-twitter"></i></a>
+          
+          <a href="https://www.instagram.com/mohit_shah0002?igsh=bDU5NHM3ZTF2cTVj" target="_blank"><i class="fab fa-instagram"></i></a>
+          
           <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          
           <a href="https://wa.me/918595366682" target="_blank"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
@@ -732,12 +875,10 @@
         card.classList.toggle('flipped');
       });
       
-      // For touch devices
+      // For touch devices - prevent double tap zoom
       card.addEventListener('touchstart', function(e) {
-        // We don't preventDefault here to allow scrolling, 
-        // but if the user taps, the click event above usually handles it.
         if (!card.classList.contains('flipped')) {
-             // Optional: specific touch logic if click doesn't register well
+          // e.preventDefault(); // Commented out to allow scrolling
         }
       }, {passive: true});
     });
