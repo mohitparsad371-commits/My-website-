@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit Prasad Services</title>
+  <meta name="google-site-verification" content="googleab29e5730f7fb514.html">
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
@@ -32,7 +34,6 @@
       backdrop-filter: blur(5px);
       border-bottom: 1px solid rgba(0, 230, 118, 0.2);
     }
-     <meta name="google-site-verification" content="googleab29e5730f7fb514.html.>
 
     .nav-container {
       display: flex;
@@ -467,10 +468,8 @@
   </style>
 </head>
 <body>
-  <!-- Animated Background -->
   <div class="animated-bg" id="animatedBg"></div>
 
-  <!-- Header & Navigation -->
   <header>
     <div class="nav-container">
       <a href="#" class="logo">Mohit<span>Prasad</span></a>
@@ -487,7 +486,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-content">
       <h1>Master Practical Skills for Career Growth</h1>
@@ -499,7 +497,6 @@
     </div>
   </section>
 
-  <!-- Services Section -->
   <section id="services">
     <div class="section-title">
       <h2>Our Services</h2>
@@ -614,7 +611,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact" id="contact">
     <div class="section-title">
       <h2>Contact Me</h2>
@@ -664,7 +660,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-content">
@@ -681,12 +676,11 @@
       </div>
       
       <div class="copyright">
-        <p>&copy; 2023 Mohit Prasad Services. All rights reserved.</p>
+        <p>&copy; 2025 Mohit Prasad Services. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
   <a href="https://wa.me/918595366682" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -738,14 +732,15 @@
         card.classList.toggle('flipped');
       });
       
-      // For touch devices - prevent double tap zoom
+      // For touch devices
       card.addEventListener('touchstart', function(e) {
+        // We don't preventDefault here to allow scrolling, 
+        // but if the user taps, the click event above usually handles it.
         if (!card.classList.contains('flipped')) {
-          e.preventDefault();
-          card.classList.add('flipped');
+             // Optional: specific touch logic if click doesn't register well
         }
-      }, {passive: false});
+      }, {passive: true});
     });
   </script>
 </body>
-  </html>
+</html>
