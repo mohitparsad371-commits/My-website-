@@ -3,580 +3,432 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohit Prasad - Accounting & Tax Expert</title>
+  <title>Mohit Prasad | Premium Financial Consultant</title>
   
   <meta name="google-site-verification" content="UQzKVCtNI6tK-c2k4xqOK0uaN3QoHN2-j7UBjewuDwo" />
-  
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  
   <style>
+    /* --- PREMIUM THEME SETTINGS --- */
     :root {
-      --primary: #00e676;
-      --primary-glow: rgba(0, 230, 118, 0.5);
-      --dark-bg: #050505;
-      --card-bg: #111;
-      --text-light: #ffffff;
-      --text-gray: #a0a0a0;
+      --bg-dark: #050505;
+      --glass-bg: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.05);
+      --gold: #D4AF37; /* Premium Gold for Money */
+      --green: #00C853; /* Growth Green */
+      --text-main: #ffffff;
+      --text-muted: #a0a0a0;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
+      font-family: 'Outfit', sans-serif; /* Very Modern Font */
     }
 
     body {
-      background-color: var(--dark-bg);
-      color: var(--text-light);
-      line-height: 1.6;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       overflow-x: hidden;
-      min-height: 100vh;
-      font-size: 18px;
     }
 
-    /* --- AnimeJS Style Moving Grid Background --- */
-    .background-animation {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200%;
-      height: 200%;
-      background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      animation: moveGrid 20s linear infinite;
-      z-index: -2;
-      transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
-    }
+    /* Include Font */
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap');
 
-    @keyframes moveGrid {
-      0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); }
-      100% { transform: perspective(500px) rotateX(60deg) translateY(50px) translateZ(-200px); }
-    }
-
-    /* --- ANIMATION CLASSES (Scroll Reveal) --- */
-    .reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Staggered delays for cards */
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-
-
-    /* --- Header --- */
-    header {
-      background: rgba(5, 5, 5, 0.8);
-      padding: 20px 0;
+    /* --- PARTICLE BACKGROUND --- */
+    #particles-js {
       position: fixed;
       width: 100%;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      height: 100%;
+      background-color: #050505;
+      background-image: url('');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      z-index: -1;
     }
 
-    .nav-container {
+    /* --- GLASSMORPHISM HEADER --- */
+    header {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 1200px;
+      padding: 15px 30px;
+      background: rgba(20, 20, 20, 0.6);
+      backdrop-filter: blur(15px); /* The Blur Effect */
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+      border-radius: 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 40px;
+      z-index: 1000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: 800;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
       color: #fff;
       text-decoration: none;
-      letter-spacing: 1px;
     }
+    .logo span { color: var(--gold); }
 
-    .logo span { color: var(--primary); }
-
-    .nav-menu { display: flex; list-style: none; gap: 40px; }
-    .nav-menu a {
-      color: #fff; text-decoration: none; font-size: 18px; font-weight: 500;
-      transition: 0.3s; position: relative;
+    .nav-links { display: flex; gap: 30px; list-style: none; }
+    .nav-links a { 
+      text-decoration: none; color: #fff; font-size: 0.9rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
     }
-    .nav-menu a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary-glow); }
-    .hamburger { display: none; cursor: pointer; font-size: 28px; color: #fff; }
+    .nav-links a:hover { color: var(--gold); }
+    
+    .cta-btn {
+      background: linear-gradient(45deg, var(--gold), #FDC830);
+      color: #000;
+      padding: 10px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: transform 0.3s;
+    }
+    .cta-btn:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(212, 175, 55, 0.4); }
 
-    /* --- Hero Section --- */
+    /* --- HERO SECTION --- */
     .hero {
-      padding: 180px 20px 100px;
-      text-align: center;
-      min-height: 90vh;
+      height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
     }
 
-    .hero h1 {
-      font-size: 5rem;
-      margin-bottom: 25px;
-      font-weight: 800;
+    .hero-content h1 {
+      font-size: 4.5rem;
       line-height: 1.1;
-      /* Gradient Text */
-      background: linear-gradient(to bottom right, #fff, #888);
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+
+    .hero-content h1 span {
+      background: linear-gradient(to right, #fff, #999);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    
-    .hero h1 span {
-        background: var(--primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 0 30px var(--primary-glow);
+
+    .typing-text {
+      color: var(--gold);
+      font-size: 4.5rem;
+      font-weight: 900;
     }
 
     .hero p {
-      font-size: 1.5rem;
-      margin-bottom: 40px;
-      color: var(--text-gray);
-      max-width: 800px;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 20px auto 40px;
     }
 
-    .btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #000;
-      padding: 18px 45px;
-      border: none;
-      border-radius: 50px;
-      font-size: 18px;
-      font-weight: 700;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.3s;
-      margin: 10px;
-      box-shadow: 0 0 20px var(--primary-glow);
-    }
-
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px var(--primary-glow);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      box-shadow: none;
-    }
-
-    .btn-secondary:hover { background: rgba(0, 230, 118, 0.1); }
-
-    /* --- Stats --- */
-    .stats-section {
-      background: rgba(255, 255, 255, 0.02);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      padding: 60px 0;
-    }
-
-    .stats-container {
+    /* --- STATS GLASS BAR --- */
+    .stats-glass {
       display: flex;
       justify-content: space-around;
-      max-width: 1400px;
-      margin: 0 auto;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 50px 0;
+      margin-top: -50px;
     }
-    .stat-number { font-size: 4rem; font-weight: 800; color: var(--primary); }
-    .stat-label { color: var(--text-gray); font-size: 1.2rem; letter-spacing: 2px; }
+    .stat-item h2 { font-size: 3rem; color: var(--gold); margin-bottom: 5px; }
+    .stat-item p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: #fff; }
 
-    /* --- Services Grid --- */
-    .section { padding: 120px 20px; }
-    .section-title { text-align: center; margin-bottom: 80px; }
-    .section-title h2 { font-size: 3.5rem; margin-bottom: 15px; color: #fff; }
-    .section-title p { font-size: 1.3rem; color: var(--text-gray); }
+    /* --- 3D TILT CARDS (SERVICES) --- */
+    .section { padding: 120px 20px; max-width: 1300px; margin: 0 auto; }
+    .section-title { font-size: 2.5rem; margin-bottom: 60px; text-align: center; }
+    .section-title span { color: var(--gold); border-bottom: 2px solid var(--gold); }
 
-    .card-container {
+    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 40px;
-      max-width: 1400px;
-      margin: 0 auto;
     }
 
-    .card {
-      height: 450px;
-      perspective: 1000px;
-      cursor: pointer;
-    }
-
-    .card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-      transform-style: preserve-3d;
-    }
-
-    .card:hover .card-inner { transform: rotateY(10deg) scale(1.02); } /* Subtle hover effect */
-    .card.flipped .card-inner { transform: rotateY(180deg); }
-
-    .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
+    .glass-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: 20px;
       padding: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: #111;
+      position: relative;
+      overflow: hidden;
+      transition: 0.5s;
+      /* Backdrop filter for glass effect */
+      backdrop-filter: blur(5px);
+    }
+    
+    /* Shining effect on hover */
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      transition: 0.5s;
+    }
+    .glass-card:hover::before { left: 100%; }
+
+    .glass-card i {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 25px;
+      background: rgba(212, 175, 55, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    .glass-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+    .glass-card p { color: var(--text-muted); margin-bottom: 20px; line-height: 1.6; }
+    
+    .feature-list li {
+      list-style: none;
+      padding: 5px 0;
+      color: #ccc;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .feature-list li::before { content: '•'; color: var(--green); margin-right: 10px; font-size: 1.2rem; }
+
+    /* --- CALCULATOR (PREMIUM UI) --- */
+    .calc-wrapper {
+      background: linear-gradient(145deg, #111, #0a0a0a);
+      padding: 50px;
+      border-radius: 30px;
+      border: 1px solid var(--glass-border);
+      max-width: 800px;
+      margin: 0 auto;
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
-    .card-back {
-      transform: rotateY(180deg);
-      border: 2px solid var(--primary);
-      background: #000;
+    .input-group { margin-bottom: 25px; }
+    .input-group label { display: block; margin-bottom: 10px; color: var(--gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;}
+    
+    .premium-input {
+      width: 100%; padding: 15px; background: #050505; border: 1px solid #333; 
+      color: #fff; border-radius: 10px; font-size: 1.1rem; outline: none;
     }
+    .premium-input:focus { border-color: var(--gold); }
 
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 25px;
-      opacity: 0.8;
-      transition: 0.3s;
+    .btn-calc {
+      width: 100%; padding: 15px; background: var(--gold); color: #000; border: none; 
+      border-radius: 10px; font-weight: 900; font-size: 1.1rem; cursor: pointer; transition: 0.3s;
     }
-    .card:hover img { opacity: 1; }
+    .btn-calc:hover { letter-spacing: 2px; }
 
-    .card h3 { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
-    .features li {
-      padding: 10px 0;
-      font-size: 1.1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      text-align: left;
-      display: flex;
-      align-items: center;
+    /* --- CONTACT --- */
+    .contact-section { text-align: center; padding: 100px 20px; }
+    .contact-row { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 40px; }
+    
+    .contact-btn {
+      display: flex; align-items: center; gap: 15px; padding: 15px 30px;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+      border-radius: 50px; color: #fff; text-decoration: none; transition: 0.3s;
     }
-    .features li:before { content: '✓'; color: var(--primary); margin-right: 15px; }
+    .contact-btn:hover { background: var(--gold); color: #000; transform: translateY(-5px); }
 
-    /* --- Calculator --- */
-    .calculator-section { background: rgba(10, 10, 10, 0.8); }
-    .calc-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #111;
-      padding: 60px;
-      border-radius: 30px;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
+    /* Footer */
+    footer { border-top: 1px solid #222; padding: 50px 20px; text-align: center; color: #666; }
 
-    .form-group label { font-size: 1.2rem; margin-bottom: 15px; display: block; color: var(--text-gray);}
-    .form-group input, .form-group select {
-      padding: 20px; font-size: 1.3rem; border-radius: 12px;
-      background: #000; border: 1px solid #333; color: #fff; width: 100%;
-      transition: 0.3s;
-    }
-    .form-group input:focus { border-color: var(--primary); box-shadow: 0 0 15px var(--primary-glow); outline: none; }
-
-    /* --- Contact Grid --- */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .contact-box {
-      padding: 50px;
-      background: #111;
-      border-radius: 20px;
-      text-align: center;
-      text-decoration: none;
-      transition: 0.4s;
-      border: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .contact-box:hover {
-      transform: translateY(-15px);
-      border-color: var(--primary);
-      box-shadow: 0 10px 40px rgba(0, 230, 118, 0.1);
-    }
-    .contact-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; }
-    .contact-box h3 { color: #fff; font-size: 1.8rem; }
-
-    /* --- Footer --- */
-    footer {
-      background: #000;
-      padding: 100px 0 50px;
-      text-align: center;
-      border-top: 1px solid #222;
-    }
-
-    /* Mobile */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.8rem; }
-      .nav-menu { 
-        position: fixed; top: 0; right: -100%; 
-        background: #000; flex-direction: column; 
-        width: 100%; height: 100vh; padding: 100px 40px;
-        transition: 0.4s;
-      }
-      .nav-menu.active { right: 0; }
-      .hamburger { display: block; z-index: 1001; }
-      .stats-container { flex-direction: column; gap: 40px; }
-      .card-container { grid-template-columns: 1fr; }
+      .hero-content h1 { font-size: 2.5rem; }
+      .typing-text { font-size: 2.5rem; display: block; }
+      .nav-links { display: none; }
+      .stats-glass { flex-direction: column; gap: 30px; text-align: center; }
+      header { width: 95%; padding: 15px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="background-animation"></div>
+  <div id="particles-js"></div>
 
   <header>
-    <div class="nav-container">
-      <a href="#" class="logo">Mohit<span>Prasad</span></a>
-      <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-        <li><a href="#services" onclick="toggleMenu()">Services</a></li>
-        <li><a href="#calculator" onclick="toggleMenu()">Tools</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </ul>
-    </div>
+    <a href="#" class="logo">Mohit<span>Prasad</span>.</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#calculator">Tools</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="tel:+918595366682" class="cta-btn">CALL NOW</a>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-content reveal active">
-      <h1>Simplify Your <br><span>Business Finances</span></h1>
-      <p>Delhi's Expert GST Filing, Income Tax Returns, and Corporate Accounting Services.</p>
-      <div style="margin-top: 30px;">
-        <a href="#contact" class="btn">Book Consultation</a>
-        <a href="#services" class="btn btn-secondary">View Services</a>
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+      <h1>Next Gen <br><span class="typing-text"></span></h1>
+      <p>We don't just file taxes. We engineer your financial growth. Trusted by Delhi's top businesses for precision accounting.</p>
+      <div style="display: flex; justify-content: center; gap: 20px;">
+        <a href="#contact" class="cta-btn" style="padding: 15px 40px; font-size: 1.1rem;">START NOW</a>
+        <a href="https://wa.me/918595366682" class="cta-btn" style="background: transparent; border: 1px solid #fff; color: #fff;">WHATSAPP</a>
       </div>
     </div>
   </section>
 
-  <div class="stats-section">
-    <div class="stats-container reveal">
-      <div class="stat-box">
-        <div class="stat-number">500+</div>
-        <div class="stat-label">Clients</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">₹10Cr+</div>
-        <div class="stat-label">Tax Saved</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Compliance</div>
-      </div>
+  <div class="stats-glass" data-aos="fade-up">
+    <div class="stat-item">
+      <h2 data-target="500">500+</h2>
+      <p>Clients Managed</p>
+    </div>
+    <div class="stat-item">
+      <h2>100%</h2>
+      <p>Compliance Rate</p>
+    </div>
+    <div class="stat-item">
+      <h2>₹10Cr</h2>
+      <p>Funds Handled</p>
     </div>
   </div>
 
   <section class="section" id="services">
-    <div class="section-title reveal">
-      <h2>Our Professional Services</h2>
-      <p>End-to-end financial solutions for you</p>
+    <div class="section-title" data-aos="fade-up">
+      Premium <span>Services</span>
     </div>
     
-    <div class="card-container">
-      <div class="card reveal delay-1" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="GST">
-            <h3>GST Compliance</h3>
-            <p>Registration & Monthly Returns</p>
-            <small style="color:var(--primary); margin-top:15px;">TAP TO FLIP</small>
-          </div>
-          <div class="card-back">
-            <h3>GST Services</h3>
-            <ul class="features">
-              <li>New GST Registration</li>
-              <li>GSTR-1 & 3B Filing</li>
-              <li>Annual Reconciliation</li>
-              <li>Notice Handling</li>
-            </ul>
-          </div>
-        </div>
+    <div class="cards-grid">
+      <div class="glass-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-aos="fade-up" data-aos-delay="100">
+        <i class="fas fa-chart-line"></i>
+        <h3>GST & Compliance</h3>
+        <p>End-to-end GST management including registration, monthly filing, and notice handling with zero error tolerance.</p>
+        <ul class="feature-list">
+          <li>GSTR-1 & 3B Filing</li>
+          <li>Annual Reconciliation</li>
+          <li>E-Way Bill System</li>
+        </ul>
       </div>
 
-      <div class="card reveal delay-2" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1634733988138-bf2c3a2a13fa?auto=format&fit=crop&w=600&q=80" alt="ITR">
-            <h3>ITR Filing</h3>
-            <p>Maximize Refunds Legally</p>
-            <small style="color:var(--primary); margin-top:15px;">TAP TO FLIP</small>
-          </div>
-          <div class="card-back">
-            <h3>Income Tax</h3>
-            <ul class="features">
-              <li>Salaried (ITR-1)</li>
-              <li>Business (ITR-3/4)</li>
-              <li>Capital Gains Tax</li>
-              <li>Tax Planning Advice</li>
-            </ul>
-          </div>
-        </div>
+      <div class="glass-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-aos="fade-up" data-aos-delay="200">
+        <i class="fas fa-wallet"></i>
+        <h3>Income Tax (ITR)</h3>
+        <p>Strategic tax planning to maximize your legal savings. We handle complex cases for businesses and salaried individuals.</p>
+        <ul class="feature-list">
+          <li>Business ITR-3/4</li>
+          <li>Capital Gains Analysis</li>
+          <li>TDS Refunds</li>
+        </ul>
       </div>
 
-      <div class="card reveal delay-3" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Accounting">
-            <h3>Bookkeeping</h3>
-            <p>Daily Accounts & Balance Sheets</p>
-            <small style="color:var(--primary); margin-top:15px;">TAP TO FLIP</small>
-          </div>
-          <div class="card-back">
-            <h3>Accounting</h3>
-            <ul class="features">
-              <li>Daily Ledger Entry</li>
-              <li>Profit & Loss Account</li>
-              <li>Balance Sheet</li>
-              <li>Tally / Zoho Books</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal delay-4" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Startup">
-            <h3>Startup Setup</h3>
-            <p>Company Formation</p>
-            <small style="color:var(--primary); margin-top:15px;">TAP TO FLIP</small>
-          </div>
-          <div class="card-back">
-            <h3>Business Setup</h3>
-            <ul class="features">
-              <li>Proprietorship Reg.</li>
-              <li>Partnership Deeds</li>
-              <li>MSME/Udyam Reg.</li>
-              <li>FSSAI License</li>
-            </ul>
-          </div>
-        </div>
+      <div class="glass-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-aos="fade-up" data-aos-delay="300">
+        <i class="fas fa-building"></i>
+        <h3>Corporate Setup</h3>
+        <p>Turn your idea into a legal entity. We handle the paperwork so you can focus on building your empire.</p>
+        <ul class="feature-list">
+          <li>Private Ltd Registration</li>
+          <li>MSME & Startup India</li>
+          <li>FSSAI Licensing</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="section calculator-section reveal" id="calculator">
-    <div class="section-title">
-      <h2>Instant GST Calculator</h2>
-    </div>
-    <div class="calc-container">
-      <div class="form-group">
-        <label>Amount (₹)</label>
-        <input type="number" id="amount" placeholder="Enter value">
+  <section class="section" id="calculator">
+    <div class="section-title" data-aos="fade-up">Smart <span>Calculator</span></div>
+    <div class="calc-wrapper" data-aos="zoom-in">
+      <div class="input-group">
+        <label>Transaction Amount (INR)</label>
+        <input type="number" id="amount" class="premium-input" placeholder="Enter Amount">
       </div>
-      <div class="form-group">
-        <label>GST Rate</label>
-        <select id="gstRate">
-          <option value="5">5%</option>
-          <option value="12">12%</option>
-          <option value="18" selected>18%</option>
-          <option value="28">28%</option>
+      <div class="input-group">
+        <label>GST Slab</label>
+        <select id="gstRate" class="premium-input">
+          <option value="18">18% (Services/Standard)</option>
+          <option value="5">5% (Essentials)</option>
+          <option value="12">12% (Construction/Etc)</option>
+          <option value="28">28% (Luxury)</option>
         </select>
       </div>
-      <button class="btn" style="width:100%; margin-top:20px;" onclick="calculateGST()">Calculate</button>
-      <div class="calc-result" id="result" style="display:none; margin-top:30px; text-align:center;">
-        <p style="font-size:1.2rem;">GST: <strong id="gstAmount" style="color:var(--primary)">₹0</strong></p>
-        <h3 style="font-size:2.5rem;">Total: <span id="totalAmount">₹0</span></h3>
+      <button class="btn-calc" onclick="calculate()">CALCULATE LIABILITY</button>
+      <div id="result" style="text-align: center; margin-top: 30px; display: none;">
+        <p style="color: #888;">Total Tax</p>
+        <h2 id="taxVal" style="font-size: 3rem; color: var(--green);">₹0</h2>
+        <h3 id="totalVal" style="color: #fff;">Total: ₹0</h3>
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <div class="section-title reveal">
-      <h2>Get In Touch</h2>
+  <section class="contact-section" id="contact">
+    <div class="section-title">Let's <span>Talk</span></div>
+    <p style="color: #aaa; max-width: 600px; margin: 0 auto;">Ready to upgrade your financial management? Contact us for a priority consultation.</p>
+    
+    <div class="contact-row">
+      <a href="tel:+918595366682" class="contact-btn"><i class="fas fa-phone"></i> +91 8595366682</a>
+      <a href="mailto:mohitparsad371@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> Email Us</a>
+      <a href="https://wa.me/918595366682" class="contact-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
     </div>
-    <div class="contact-grid">
-      <a href="tel:+918595366682" class="contact-box reveal delay-1">
-        <i class="fas fa-phone-alt"></i>
-        <h3>Call Now</h3>
-        <p>+91 8595366682</p>
-      </a>
-      <a href="https://wa.me/918595366682" target="_blank" class="contact-box reveal delay-2">
-        <i class="fab fa-whatsapp"></i>
-        <h3>WhatsApp</h3>
-        <p>Chat Instantly</p>
-      </a>
-      <a href="mailto:mohitparsad371@gmail.com" class="contact-box reveal delay-3">
-        <i class="fas fa-envelope"></i>
-        <h3>Email</h3>
-        <p>mohitparsad371@gmail.com</p>
-      </a>
+    <div class="contact-row" style="margin-top: 20px;">
+       <a href="https://www.instagram.com/mohit_shah0002" target="_blank" style="color:#fff; font-size: 24px; margin: 0 15px;"><i class="fab fa-instagram"></i></a>
+       <a href="https://x.com/element_syco" target="_blank" style="color:#fff; font-size: 24px; margin: 0 15px;"><i class="fab fa-twitter"></i></a>
+       <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank" style="color:#fff; font-size: 24px; margin: 0 15px;"><i class="fab fa-facebook-f"></i></a>
+       <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank" style="color:#fff; font-size: 24px; margin: 0 15px;"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </section>
 
   <footer>
-    <div class="logo" style="margin-bottom:20px;">Mohit<span>Prasad</span></div>
-    <div style="margin-bottom:30px;">
-      <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank" style="color:#fff; margin:0 15px; font-size:24px;"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://x.com/element_syco" target="_blank" style="color:#fff; margin:0 15px; font-size:24px;"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/mohit_shah0002" target="_blank" style="color:#fff; margin:0 15px; font-size:24px;"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank" style="color:#fff; margin:0 15px; font-size:24px;"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-    <p style="color:#666;">&copy; 2025 Mohit Prasad Services.</p>
+    <p>&copy; 2025 Mohit Prasad | Premium Financial Services. All rights reserved.</p>
   </footer>
 
-  <a href="https://wa.me/918595366682" style="position:fixed; bottom:30px; right:30px; background:#25D366; color:#fff; width:70px; height:70px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:35px; box-shadow:0 5px 20px rgba(0,0,0,0.4); z-index:1000;" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
 
   <script>
-    // Mobile Menu
-    function toggleMenu() {
-      document.getElementById('navMenu').classList.toggle('active');
-    }
+    // 1. Init Scroll Animation
+    AOS.init();
 
-    // Calculator
-    function calculateGST() {
-      const amount = parseFloat(document.getElementById('amount').value);
+    // 2. Init Typing Effect (The Hero Text)
+    var typed = new Typed('.typing-text', {
+      strings: ['Accounting.', 'GST Filing.', 'Tax Planning.', 'Growth.'],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+
+    // 3. Init Particle Background (The Network Effect)
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.2, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.2, "width": 1 },
+        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+        "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
+      },
+      "retina_detect": true
+    });
+
+    // 4. Calculator Logic
+    function calculate() {
+      const amt = parseFloat(document.getElementById('amount').value);
       const rate = parseFloat(document.getElementById('gstRate').value);
-      if(isNaN(amount)) { alert("Enter amount"); return; }
-      const gst = (amount * rate) / 100;
-      const total = amount + gst;
-      document.getElementById('gstAmount').innerText = "₹" + gst.toLocaleString('en-IN');
-      document.getElementById('totalAmount').innerText = "₹" + total.toLocaleString('en-IN');
-      document.getElementById('result').style.display = "block";
-    }
-
-    // SCROLL ANIMATION LOGIC (The AnimeJS feel)
-    window.addEventListener('scroll', reveal);
-
-    function reveal() {
-      var reveals = document.querySelectorAll('.reveal');
-
-      for(var i = 0; i < reveals.length; i++) {
-        var windowheight = window.innerHeight;
-        var revealtop = reveals[i].getBoundingClientRect().top;
-        var revealpoint = 150;
-
-        if(revealtop < windowheight - revealpoint) {
-          reveals[i].classList.add('active');
-        }
+      if(amt) {
+        const tax = (amt * rate) / 100;
+        const total = amt + tax;
+        document.getElementById('taxVal').innerText = "₹" + tax.toLocaleString();
+        document.getElementById('totalVal').innerText = "Total: ₹" + total.toLocaleString();
+        document.getElementById('result').style.display = 'block';
       }
     }
-    
-    // Trigger once on load
-    reveal();
   </script>
 </body>
 </html>
