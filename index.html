@@ -3,677 +3,519 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohit Prasad - Accounting & Tax Expert</title>
+  <title>Mohit Prasad | Tax & Accounting</title>
   
   <meta name="google-site-verification" content="UQzKVCtNI6tK-c2k4xqOK0uaN3QoHN2-j7UBjewuDwo" />
   
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
     :root {
-      --primary: #00e676;
-      --primary-glow: rgba(0, 230, 118, 0.4);
-      --dark-bg: #0a0c10;
-      --card-bg: #161b22;
-      --text-light: #ffffff;
-      --text-gray: #c9d1d9;
+      /* AnimeJS Inspired Palette */
+      --bg-color: #000000;      /* Pure Black */
+      --bg-secondary: #111111; /* Slightly lighter black for cards */
+      --text-primary: #ffffff;
+      --text-secondary: #888888;
+      --accent-cyan: #00ffff;   /* Bright Neon Cyan */
+      --accent-pink: #ff00ff;   /* Bright Neon Magenta */
+      --border-color: #333333;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-      scroll-behavior: smooth;
+      /* The core of AnimeJS style: Monospaced font */
+      font-family: 'Roboto Mono', monospace; 
     }
 
     body {
-      background-color: var(--dark-bg);
-      /* Bhari look ke liye Background Pattern */
-      background-image: radial-gradient(#1f2937 1px, transparent 1px);
-      background-size: 40px 40px;
-      color: var(--text-light);
-      line-height: 1.6;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.5;
       overflow-x: hidden;
-      min-height: 100vh;
-      font-size: 18px; /* Bada font size desktop ke liye */
     }
 
-    /* Glowing Spotlights (Background filler) */
-    body::before {
-      content: '';
-      position: fixed;
-      top: -10%;
-      left: -10%;
-      width: 50%;
-      height: 50%;
-      background: radial-gradient(circle, rgba(0, 230, 118, 0.15) 0%, transparent 70%);
-      filter: blur(80px);
-      z-index: -1;
-    }
-
-    body::after {
-      content: '';
-      position: fixed;
-      bottom: -10%;
-      right: -10%;
-      width: 50%;
-      height: 50%;
-      background: radial-gradient(circle, rgba(0, 100, 255, 0.1) 0%, transparent 70%);
-      filter: blur(80px);
-      z-index: -1;
-    }
-
-    /* Header - Wider & Bigger */
+    /* --- Header --- */
     header {
-      background: rgba(10, 12, 16, 0.95);
-      padding: 20px 0;
       position: fixed;
-      width: 100%;
       top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .nav-container {
+      width: 100%;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1400px; /* Increased width */
-      margin: 0 auto;
-      padding: 0 40px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: 800;
-      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
       text-decoration: none;
-      letter-spacing: 1px;
+      color: var(--text-primary);
+      letter-spacing: -1px;
     }
 
     .logo span {
-      color: var(--primary);
+      color: var(--accent-cyan);
     }
 
     .nav-menu {
       display: flex;
+      gap: 30px;
       list-style: none;
-      gap: 40px;
     }
 
     .nav-menu a {
-      color: #fff;
       text-decoration: none;
-      font-size: 18px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
       font-weight: 500;
-      transition: 0.3s;
-      position: relative;
+      transition: color 0.3s ease;
     }
 
     .nav-menu a:hover {
-      color: var(--primary);
+      color: var(--accent-cyan);
     }
+    
+    .hamburger { display: none; color: var(--accent-cyan); font-size: 1.5rem; cursor: pointer;}
 
-    .hamburger { display: none; cursor: pointer; font-size: 28px; color: #fff; }
 
-    /* Hero Section - Bada aur Bhara hua */
+    /* --- Hero Section --- */
     .hero {
-      padding: 180px 20px 100px;
-      text-align: center;
-      min-height: 90vh; /* Screen cover karega */
+      min-height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
-    }
-
-    .hero-content {
-      max-width: 1000px;
-      z-index: 2;
+      text-align: center;
+      padding: 150px 20px 50px;
     }
 
     .hero h1 {
-      font-size: 4.5rem; /* Bahut bada text */
-      margin-bottom: 25px;
-      font-weight: 800;
-      line-height: 1.1;
-      background: linear-gradient(to right, #fff, #b0b0b0);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: -2px;
     }
 
     .hero h1 span {
-      background: linear-gradient(to right, var(--primary), #00b060);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: var(--accent-cyan);
     }
 
     .hero p {
-      font-size: 1.4rem;
+      color: var(--text-secondary);
+      max-width: 600px;
       margin-bottom: 40px;
-      color: var(--text-gray);
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1rem;
+    }
+
+    /* Technical "Terminal" Graphic */
+    .tech-visual {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 20px;
+      border-radius: 4px;
+      text-align: left;
+      margin-bottom: 40px;
+      position: relative;
+      max-width: 500px;
+      width: 100%;
+    }
+    
+    .tech-visual::before {
+        content: 'status: active';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        background: var(--bg-color);
+        padding: 0 10px;
+        color: var(--accent-cyan);
+        font-size: 0.8rem;
+    }
+
+    .code-line {
+        color: var(--text-secondary);
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+    }
+    .code-line .function { color: var(--accent-pink); }
+    .code-line .string { color: var(--accent-cyan); }
+
+    /* Buttons AnimeJS Style */
+    .btn-group {
+        display: flex;
+        gap: 20px;
     }
 
     .btn {
-      display: inline-block;
-      background: var(--primary);
-      color: #000;
-      padding: 16px 40px;
-      border: none;
-      border-radius: 50px;
-      font-size: 18px;
+      padding: 12px 30px;
+      font-size: 0.9rem;
       font-weight: 700;
-      cursor: pointer;
       text-decoration: none;
-      transition: all 0.3s;
-      margin: 10px;
-      box-shadow: 0 0 20px var(--primary-glow);
-    }
-
-    .btn:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 30px var(--primary-glow);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      box-shadow: none;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(0, 230, 118, 0.1);
-    }
-
-    /* Stats Strip - Full Width */
-    .stats-section {
-      background: rgba(255, 255, 255, 0.03);
-      border-top: 1px solid rgba(255,255,255,0.05);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      padding: 60px 0;
-      margin-top: -50px;
-      position: relative;
-      z-index: 3;
-      backdrop-filter: blur(10px);
-    }
-
-    .stats-container {
-      display: flex;
-      justify-content: space-around;
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .stat-box { text-align: center; }
-    .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--primary); }
-    .stat-label { color: var(--text-gray); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; }
-
-    /* Services Section - Grid Layout */
-    .section { padding: 100px 20px; }
-    
-    .section-title { text-align: center; margin-bottom: 70px; }
-    .section-title h2 { font-size: 3rem; margin-bottom: 15px; color: #fff; }
-    .section-title p { font-size: 1.2rem; color: var(--text-gray); }
-    .section-title h2:after {
-      content: ''; display: block; width: 80px; height: 4px;
-      background: var(--primary); margin: 20px auto 0; border-radius: 2px;
-    }
-
-    .card-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Bigger cards */
-      gap: 40px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-
-    .card {
-      height: 450px; /* Taller cards */
-      perspective: 1000px;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
       cursor: pointer;
+      font-family: 'Roboto Mono', monospace;
     }
 
-    .card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.8s cubic-bezier(0.4,0.2,0.2,1);
-      transform-style: preserve-3d;
+    .btn-primary {
+      background: var(--accent-cyan);
+      color: #000;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    }
+    
+    .btn-primary:hover {
+        background: #fff;
+        box-shadow: 0 0 20px var(--accent-cyan);
     }
 
-    .card.flipped .card-inner { transform: rotateY(180deg); }
-
-    .card-front, .card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 20px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    .btn-outline {
+      border-color: var(--accent-pink);
+      color: var(--accent-pink);
+      background: transparent;
     }
 
-    .card-front {
-      background: linear-gradient(145deg, #1a202c, #161b22);
+    .btn-outline:hover {
+      background: var(--accent-pink);
+      color: #000;
+      box-shadow: 0 0 20px var(--accent-pink);
     }
 
-    .card-back {
-      transform: rotateY(180deg);
-      background: linear-gradient(145deg, #111, #0d1117);
-      border: 2px solid var(--primary);
-    }
 
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 15px;
-      margin-bottom: 25px;
-    }
-
-    .card h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 10px; }
-    .card p { font-size: 1rem; color: #ccc; text-align: center; }
-
-    .features li {
-      padding: 10px 0;
-      font-size: 1.1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      text-align: left;
-      display: flex;
-      align-items: center;
-    }
-    .features li:before { content: '✓'; color: var(--primary); font-weight: bold; margin-right: 15px; font-size: 1.2rem;}
-
-    /* Calculator - Bigger */
-    .calculator-section { background: rgba(0,0,0,0.3); padding: 120px 20px; }
-    .calc-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: #161b22;
-      padding: 50px;
-      border-radius: 25px;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    }
-
-    .form-group label { font-size: 1.2rem; margin-bottom: 12px; display: block;}
-    .form-group input, .form-group select {
-      padding: 18px; font-size: 1.2rem; border-radius: 10px;
-      background: #0d1117; border: 1px solid #333; color: #fff; width: 100%;
-    }
-
-    /* FAQ & Testimonials */
-    .faq-container { max-width: 1000px; margin: 0 auto; }
-    .faq-item { margin-bottom: 20px; }
-    .faq-question { padding: 25px; font-size: 1.3rem; background: #1c2431; }
-    .faq-answer { font-size: 1.1rem; line-height: 1.8; }
-
-    /* Contact Section - Grid */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+    /* --- Sections General --- */
+    .section {
+      padding: 100px 40px;
+      border-top: 1px solid var(--border-color);
       max-width: 1200px;
       margin: 0 auto;
     }
 
-    .contact-box {
-      padding: 40px;
-      background: linear-gradient(145deg, #1c2431, #161b22);
-      border-radius: 20px;
-      text-align: center;
-      text-decoration: none;
-      transition: 0.4s;
-      border: 1px solid rgba(255,255,255,0.05);
+    .section-header {
+      margin-bottom: 60px;
     }
 
-    .contact-box:hover {
-      transform: translateY(-10px);
-      background: #222;
-      border-color: var(--primary);
+    .section-header h2 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .section-header h2 span { color: var(--accent-cyan); }
+
+    /* --- Services Grid --- */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
-    .contact-box i { font-size: 3rem; color: var(--primary); margin-bottom: 20px; }
-    .contact-box h3 { color: #fff; font-size: 1.5rem; margin-bottom: 10px; }
+    .service-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      padding: 30px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
 
-    /* Footer */
+    .service-card:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px -10px rgba(0, 255, 255, 0.2);
+    }
+
+    .service-card h3 {
+      color: var(--accent-cyan);
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+    }
+    
+    .service-card h3 i { margin-right: 10px; color: var(--text-secondary); }
+
+    .service-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .service-card li {
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .service-card li::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: var(--accent-pink);
+    }
+
+    /* --- Calculator --- */
+    .calc-box {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        padding: 40px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; margin-bottom: 10px; color: var(--text-secondary); font-size: 0.9rem;}
+    
+    .form-input {
+        width: 100%;
+        padding: 15px;
+        background: var(--bg-color);
+        border: 1px solid var(--border-color);
+        color: var(--accent-cyan);
+        font-family: 'Roboto Mono', monospace;
+        font-size: 1rem;
+        outline: none;
+        transition: 0.3s;
+    }
+    
+    .form-input:focus {
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 10px rgba(0,255,255,0.1);
+    }
+    
+    .calc-result {
+        margin-top: 30px;
+        padding: 20px;
+        border: 1px dashed var(--accent-pink);
+        text-align: center;
+        display: none;
+    }
+    
+    .calc-result h3 { font-size: 1.5rem; color: var(--text-primary); }
+    .calc-result span { color: var(--accent-cyan); }
+
+
+    /* --- Contact --- */
+    .contact-links {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        text-decoration: none;
+        color: var(--text-secondary);
+        transition: 0.3s;
+    }
+    
+    .contact-item:hover {
+        border-color: var(--accent-cyan);
+        color: var(--accent-cyan);
+        background: rgba(0,255,255,0.05);
+    }
+    
+    .contact-item i { font-size: 1.5rem; margin-right: 15px; color: var(--accent-pink); }
+    .contact-item div span { display: block; font-size: 0.8rem; color: var(--text-secondary); }
+    .contact-item div h4 { font-size: 1rem; }
+
+
+    /* --- Footer --- */
     footer {
-      background: #050505;
-      padding: 80px 0 40px;
+      padding: 50px 40px;
+      border-top: 1px solid var(--border-color);
       text-align: center;
-      border-top: 1px solid #222;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
     }
+    
+    .social-bar { margin-bottom: 20px; }
+    .social-bar a {
+        color: var(--text-secondary);
+        margin: 0 10px;
+        font-size: 1.2rem;
+        transition: 0.3s;
+    }
+    .social-bar a:hover { color: var(--accent-cyan); }
 
-    /* Mobile Adjustments */
+    /* Responsive */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
-      .hero p { font-size: 1.1rem; }
-      .nav-menu { 
-        position: fixed; top: 0; right: -100%; 
-        background: #0d1117; flex-direction: column; 
-        width: 85%; height: 100vh; padding: 80px 40px;
-        z-index: 1001; box-shadow: -10px 0 30px rgba(0,0,0,0.8);
-      }
-      .nav-menu.active { right: 0; }
-      .hamburger { display: block; position: relative; z-index: 1002; }
-      .stats-container { flex-direction: column; gap: 30px; }
-      .card-container { grid-template-columns: 1fr; }
+      header { padding: 20px; }
+      .nav-menu { display: none; }
+      .hamburger { display: block; }
+      .section { padding: 60px 20px; }
+      .btn-group { flex-direction: column; width: 100%; }
+      .btn { width: 100%; text-align: center; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="nav-container">
-      <a href="#" class="logo">Mohit<span>Prasad</span></a>
-      <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#home" onclick="toggleMenu()">Home</a></li>
-        <li><a href="#services" onclick="toggleMenu()">Services</a></li>
-        <li><a href="#calculator" onclick="toggleMenu()">Tools</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </ul>
-    </div>
+    <a href="#" class="logo">Mohit<span>Prasad</span>_</a>
+    <ul class="nav-menu">
+      <li><a href="#services">.services()</a></li>
+      <li><a href="#calculator">.calculator()</a></li>
+      <li><a href="#contact">.contact()</a></li>
+    </ul>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Simplify Your <br><span>Business Finances</span></h1>
-      <p>Delhi's Expert GST Filing, Income Tax Returns, and Corporate Accounting Services. We manage your numbers, so you can manage your growth.</p>
-      <div style="margin-top: 20px;">
-        <a href="#contact" class="btn">Book Free Consultation</a>
-        <a href="#services" class="btn btn-secondary">Explore Services</a>
-      </div>
+  <section class="hero">
+    <h1>Precision in<br><span>Finance & Taxation</span></h1>
+    <p>Expert Accounting, GST Compliance, and Income Tax solutions designed for modern businesses.</p>
+    
+    <div class="tech-visual">
+        <div class="code-line"><span class="function">Initialize</span>(Business_Growth);</div>
+        <div class="code-line">> Loading GST modules... <span class="string">Done</span></div>
+        <div class="code-line">> Optimizing Tax liabilities... <span class="string">Done</span></div>
+        <div class="code-line">> Finalizing Balance Sheets... <span class="string">Done</span></div>
+        <div class="code-line"><span class="function">Status</span>: Ready to serve.</div>
+    </div>
+
+    <div class="btn-group">
+      <a href="#contact" class="btn btn-primary">START CONSULTATION</a>
+      <a href="#services" class="btn btn-outline">VIEW SERVICES</a>
     </div>
   </section>
-
-  <div class="stats-section">
-    <div class="stats-container">
-      <div class="stat-box">
-        <div class="stat-number">500+</div>
-        <div class="stat-label">Satisfied Clients</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">₹10Cr+</div>
-        <div class="stat-label">Tax Saved</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number">100%</div>
-        <div class="stat-label">Accuracy Rate</div>
-      </div>
-    </div>
-  </div>
 
   <section class="section" id="services">
-    <div class="section-title">
-      <h2>Our Professional Services</h2>
-      <p>End-to-end financial solutions for individuals and businesses</p>
+    <div class="section-header">
+      <h2>Core <span>Modules</span></h2>
+      <p>Specialized financial services tailored to your needs.</p>
     </div>
     
-    <div class="card-container">
-      <div class="card" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="GST">
-            <h3>GST Compliance</h3>
-            <p>Registration, Monthly Returns & Audits</p>
-            <small style="color:var(--primary); margin-top:10px; font-weight:600;">TAP FOR DETAILS</small>
-          </div>
-          <div class="card-back">
-            <h3>GST Services</h3>
-            <ul class="features">
-              <li>New GST Registration</li>
-              <li>GSTR-1 & 3B Filing</li>
-              <li>Annual Reconciliation</li>
-              <li>E-Way Bill Generation</li>
-              <li>Notice Handling</li>
-            </ul>
-          </div>
-        </div>
+    <div class="grid-container">
+      <div class="service-card">
+        <h3><i class="fas fa-file-invoice"></i> GST_Compliance</h3>
+        <ul>
+          <li>Registration & Setup</li>
+          <li>Monthly GSTR-1 & 3B Filing</li>
+          <li>Annual Reconciliation</li>
+          <li>E-Way Bill Generation</li>
+          <li>Notice Handling</li>
+        </ul>
       </div>
 
-      <div class="card" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1634733988138-bf2c3a2a13fa?auto=format&fit=crop&w=600&q=80" alt="ITR">
-            <h3>ITR Filing</h3>
-            <p>Maximize Refunds, Minimize Liability</p>
-            <small style="color:var(--primary); margin-top:10px; font-weight:600;">TAP FOR DETAILS</small>
-          </div>
-          <div class="card-back">
-            <h3>Income Tax</h3>
-            <ul class="features">
-              <li>Salaried (ITR-1)</li>
-              <li>Business (ITR-3/4)</li>
-              <li>Capital Gains Tax</li>
-              <li>TDS Refund Processing</li>
-              <li>Tax Planning Advice</li>
-            </ul>
-          </div>
-        </div>
+      <div class="service-card">
+        <h3><i class="fas fa-hand-holding-usd"></i> Income_Tax_Filing</h3>
+        <ul>
+          <li>Salaried (ITR-1) Filing</li>
+          <li>Business/Profession (ITR-3/4)</li>
+          <li>Capital Gains Analysis</li>
+          <li>TDS Refund Processing</li>
+          <li>Tax Planning Strategy</li>
+        </ul>
       </div>
 
-      <div class="card" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Accounting">
-            <h3>Bookkeeping</h3>
-            <p>Daily Accounting & Balance Sheets</p>
-            <small style="color:var(--primary); margin-top:10px; font-weight:600;">TAP FOR DETAILS</small>
-          </div>
-          <div class="card-back">
-            <h3>Accounting</h3>
-            <ul class="features">
-              <li>Daily Ledger Entry</li>
-              <li>Profit & Loss Account</li>
-              <li>Balance Sheet Finalization</li>
-              <li>Bank Reconciliation</li>
-              <li>Tally / Zoho Books</li>
-            </ul>
-          </div>
-        </div>
+      <div class="service-card">
+        <h3><i class="fas fa-calculator"></i> Bookkeeping_Engine</h3>
+        <ul>
+          <li>Daily Ledger Entries</li>
+          <li>P&L Statement Generation</li>
+          <li>Balance Sheet Finalization</li>
+          <li>Bank Reconciliation</li>
+          <li>Tally / Zoho Books Support</li>
+        </ul>
       </div>
 
-      <div class="card" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=600&q=80" alt="Startup">
-            <h3>Startup Setup</h3>
-            <p>Company Formation & Licensing</p>
-            <small style="color:var(--primary); margin-top:10px; font-weight:600;">TAP FOR DETAILS</small>
-          </div>
-          <div class="card-back">
-            <h3>Business Setup</h3>
-            <ul class="features">
-              <li>Proprietorship Reg.</li>
-              <li>Partnership Deeds</li>
-              <li>MSME/Udyam Registration</li>
-              <li>Shop & Establishment</li>
-              <li>Food License (FSSAI)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-       <div class="card" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&w=600&q=80" alt="TDS">
-            <h3>TDS Returns</h3>
-            <p>Quarterly Filing & Certificates</p>
-            <small style="color:var(--primary); margin-top:10px; font-weight:600;">TAP FOR DETAILS</small>
-          </div>
-          <div class="card-back">
-            <h3>TDS Services</h3>
-            <ul class="features">
-              <li>TDS Salary/Non-Salary</li>
-              <li>Form 16/16A Issue</li>
-              <li>Challan Payments</li>
-              <li>Revised Returns</li>
-              <li>Late Fee Solutions</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-       <div class="card" onclick="this.classList.toggle('flipped')">
-        <div class="card-inner">
-          <div class="card-front">
-            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Report">
-            <h3>Project Reports</h3>
-            <p>Loans & CMA Data</p>
-            <small style="color:var(--primary); margin-top:10px; font-weight:600;">TAP FOR DETAILS</small>
-          </div>
-          <div class="card-back">
-            <h3>Financial Reports</h3>
-            <ul class="features">
-              <li>Projected Balance Sheet</li>
-              <li>CMA Data for Loans</li>
-              <li>Net Worth Certificate</li>
-              <li>Stock Audit Report</li>
-              <li>Cash Flow Statements</li>
-            </ul>
-          </div>
-        </div>
+      <div class="service-card">
+        <h3><i class="fas fa-rocket"></i> Startup_Initialization</h3>
+        <ul>
+          <li>Proprietorship Registration</li>
+          <li>Partnership Deed Drafting</li>
+          <li>MSME/Udyam Registration</li>
+          <li>Shop & Establishment License</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section class="section calculator-section" id="calculator">
-    <div class="section-title">
-      <h2>Instant GST Calculator</h2>
-      <p>Calculate Tax liability in seconds</p>
+  <section class="section" id="calculator">
+    <div class="section-header">
+        <h2>GST <span>Calculator</span></h2>
+        <p>Quickly compute tax liability.</p>
     </div>
-    <div class="calc-container">
-      <div class="form-group">
-        <label>Enter Amount (₹)</label>
-        <input type="number" id="amount" placeholder="e.g. 50000">
-      </div>
-      <div class="form-group">
-        <label>Select GST Rate (%)</label>
-        <select id="gstRate">
-          <option value="5">5%</option>
-          <option value="12">12%</option>
-          <option value="18" selected>18%</option>
-          <option value="28">28%</option>
-        </select>
-      </div>
-      <button class="btn" style="width:100%; margin: 20px 0;" onclick="calculateGST()">CALCULATE NOW</button>
-      
-      <div class="calc-result" id="result" style="display:none; background:rgba(0,230,118,0.1); padding:20px; border-radius:10px; text-align:center;">
-        <p>GST Amount: <strong id="gstAmount" style="color:var(--primary); font-size:1.5rem;">₹0</strong></p>
-        <h3 style="color:#fff; font-size:2rem; margin-top:10px;">Total: <span id="totalAmount">₹0</span></h3>
-      </div>
-    </div>
-  </section>
-
-  <section class="section faq-container">
-    <div class="section-title">
-      <h2>Frequently Asked Questions</h2>
-    </div>
-    
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFAQ(this)">
-        What is the last date for ITR filing? <i class="fas fa-chevron-down" style="float:right"></i>
-      </div>
-      <div class="faq-answer">
-        <p>Usually, July 31st is the due date for individuals. For audit cases, it's October 31st. Late filing attracts penalties up to ₹5,000.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question" onclick="toggleFAQ(this)">
-        Do I need a GST number for online selling? <i class="fas fa-chevron-down" style="float:right"></i>
-      </div>
-      <div class="faq-answer">
-        <p>Yes, GST registration is mandatory for selling goods online through e-commerce platforms like Amazon or Flipkart, regardless of turnover.</p>
-      </div>
+    <div class="calc-box">
+        <div class="form-group">
+            <label for="amount">// Enter Amount (INR)</label>
+            <input type="number" id="amount" class="form-input" placeholder="e.g. 50000">
+        </div>
+        <div class="form-group">
+            <label for="gstRate">// Select Tax Slab</label>
+            <select id="gstRate" class="form-input">
+                <option value="5">5% Slab</option>
+                <option value="12">12% Slab</option>
+                <option value="18" selected>18% Slab (Standard)</option>
+                <option value="28">28% Slab</option>
+            </select>
+        </div>
+        <button class="btn btn-primary" style="width:100%; margin-top:20px;" onclick="calculateGST()">RUN CALCULATION</button>
+        
+        <div class="calc-result" id="result">
+            <p>GST Component: <strong id="gstAmount" style="color:var(--accent-pink)">₹0</strong></p>
+            <h3>Total Output: <span id="totalAmount">₹0</span></h3>
+        </div>
     </div>
   </section>
 
   <section class="section" id="contact">
-    <div class="section-title">
-      <h2>Start Your Financial Growth</h2>
-      <p>Contact us today for a free initial consultation</p>
+    <div class="section-header">
+      <h2>Connect <span>Now</span></h2>
+      <p>Initiate a conversation for your financial growth.</p>
     </div>
-    <div class="contact-grid">
-      <a href="tel:+918595366682" class="contact-box">
-        <i class="fas fa-phone-alt"></i>
-        <h3>Call Directly</h3>
-        <p>+91 8595366682</p>
-      </a>
-      <a href="https://wa.me/918595366682" class="contact-box" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <h3>WhatsApp Chat</h3>
-        <p>Instant Response</p>
-      </a>
-      <a href="mailto:mohitparsad371@gmail.com" class="contact-box">
-        <i class="fas fa-envelope"></i>
-        <h3>Email Us</h3>
-        <p>mohitparsad371@gmail.com</p>
-      </a>
-      <a href="https://www.instagram.com/mohit_shah0002" target="_blank" class="contact-box">
-        <i class="fab fa-instagram"></i>
-        <h3>Instagram</h3>
-        <p>Daily Tax Updates</p>
-      </a>
-      <a href="https://x.com/element_syco" target="_blank" class="contact-box">
-        <i class="fab fa-twitter"></i>
-        <h3>Twitter (X)</h3>
-        <p>Connect Professionally</p>
-      </a>
-      <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank" class="contact-box">
-        <i class="fab fa-facebook-f"></i>
-        <h3>Facebook</h3>
-        <p>Join Our Community</p>
-      </a>
+    
+    <div class="contact-links">
+        <a href="tel:+918595366682" class="contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+                <span>Call Directly</span>
+                <h4>+91 8595366682</h4>
+            </div>
+        </a>
+        <a href="https://wa.me/918595366682" target="_blank" class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <div>
+                <span>WhatsApp Chat</span>
+                <h4>Instant Message</h4>
+            </div>
+        </a>
+        <a href="mailto:mohitparsad371@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+                <span>Send Email</span>
+                <h4>mohitparsad371@gmail.com</h4>
+            </div>
+        </a>
     </div>
   </section>
 
   <footer>
-    <div class="nav-container" style="flex-direction: column; text-align:center;">
-      <div class="logo" style="margin-bottom:20px;">Mohit<span>Prasad</span></div>
-      <p style="color:#888; max-width:600px; margin:0 auto 30px;">Expert Accounting & Taxation Services in Delhi. Simplifying compliance for businesses and individuals since 2020.</p>
-      
-      <div style="margin-bottom:30px;">
-        <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank" style="color:#fff; margin:0 15px; font-size:24px;"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://x.com/element_syco" target="_blank" style="color:#fff; margin:0 15px; font-size:24px;"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/mohit_shah0002" target="_blank" style="color:#fff; margin:0 15px; font-size:24px;"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank" style="color:#fff; margin:0 15px; font-size:24px;"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      
-      <p style="color:#555; font-size:14px; border-top:1px solid #333; padding-top:20px; width:100%;">&copy; 2025 Mohit Prasad Services. All rights reserved.</p>
+    <div class="logo" style="margin-bottom: 20px;">Mohit<span>Prasad</span>_</div>
+    <div class="social-bar">
+        <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com/element_syco" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/mohit_shah0002" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
+    <p>&copy; 2025 Mohit Prasad Services. All rights reserved. <br> System status: Online.</p>
   </footer>
 
-  <a href="https://wa.me/918595366682" style="position:fixed; bottom:30px; right:30px; background:#25D366; color:#fff; width:70px; height:70px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:35px; box-shadow:0 5px 20px rgba(0,0,0,0.4); z-index:1000; transition:0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
   <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navMenu');
-      nav.classList.toggle('active');
-    }
-
+    // Simple GST Calculator Logic
     function calculateGST() {
       const amount = parseFloat(document.getElementById('amount').value);
       const rate = parseFloat(document.getElementById('gstRate').value);
       
       if(isNaN(amount)) {
-        alert("Please enter a valid amount");
+        alert("Please enter a valid amount.");
         return;
       }
 
@@ -683,19 +525,6 @@
       document.getElementById('gstAmount').innerText = "₹" + gst.toLocaleString('en-IN');
       document.getElementById('totalAmount').innerText = "₹" + total.toLocaleString('en-IN');
       document.getElementById('result').style.display = "block";
-    }
-
-    function toggleFAQ(element) {
-      const item = element.parentElement;
-      const answer = item.querySelector('.faq-answer');
-      
-      if (answer.style.maxHeight) {
-        answer.style.maxHeight = null;
-        answer.style.padding = "0 25px";
-      } else {
-        answer.style.maxHeight = answer.scrollHeight + "px";
-        answer.style.padding = "20px 25px";
-      }
     }
   </script>
 </body>
