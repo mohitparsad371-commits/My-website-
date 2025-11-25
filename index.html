@@ -1,1554 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohit Prasad | Elite Financial Consultancy</title>
-  <meta name="description" content="Delhi's elite consultant for GST, Income Tax, Company Registration and Corporate Finance.">
-  <meta name="google-site-verification" content="UQzKVCtNI6tK-c2k4xqOK0uaN3QoHN2-j7UBjewuDwo" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohit Prasad | Financial Consultant</title>
+  <meta name="description" content="Premium Tax & Accounting Services in Delhi." />
   
-  <!-- Fonts & Icons -->
-  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="google-site-verification" content="UQzKVCtNI6tK-c2k4xqOK0uaN3QoHN2-j7UBjewuDwo" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #020305;
-      --bg-soft: #05070b;
-      --card-bg: rgba(10, 10, 12, 0.92);
-      --gold: #f5c451;
-      --accent: #00e676;
-      --accent-soft: rgba(0, 230, 118, 0.08);
-      --border: rgba(255, 255, 255, 0.08);
-      --border-soft: rgba(255, 255, 255, 0.04);
-      --text-main: #f5f5f5;
-      --text-sub: #a5a5a5;
-      --radius-xl: 26px;
-      --radius-lg: 18px;
-      --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.65);
-      --blur-bg: blur(24px);
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-light: #666666;
+      --accent: #D4AF37; /* Subtle Gold */
+      --btn-bg: #1a1a1a;
+      --btn-text: #ffffff;
+      --light-gray: #f9f9f9;
     }
 
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Satoshi', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      cursor: none;
     }
 
     body {
-      background: radial-gradient(circle at top, #050814 0, #020305 45%, #000 100%);
-      color: var(--text-main);
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
       overflow-x: hidden;
-    }
-
-    /* Custom Cursor */
-    .cursor-dot, .cursor-outline {
-      position: fixed;
-      top: 0; left: 0;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      z-index: 9999;
-      pointer-events: none;
-    }
-
-    .cursor-dot {
-      width: 8px; height: 8px;
-      background: var(--accent);
-    }
-
-    .cursor-outline {
-      width: 36px; height: 36px;
-      border: 1px solid var(--accent);
-      mix-blend-mode: lighten;
-      transition: width 0.2s, height 0.2s, background 0.2s, border 0.2s;
-    }
-
-    .cursor-hover {
-      width: 60px !important;
-      height: 60px !important;
-      background: rgba(0, 230, 118, 0.08) !important;
-      border-color: rgba(0, 230, 118, 0.5) !important;
-    }
-
-    /* Loader */
-    #loader {
-      position: fixed; inset: 0;
-      background: #000;
-      display: flex; align-items: center; justify-content: center;
-      z-index: 10000;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
-
-    .loader-inner {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .loader-text {
-      font-family: 'Clash Display', system-ui;
-      font-size: 1.9rem;
-      letter-spacing: 0.4rem;
-      color: var(--accent);
-      text-transform: uppercase;
-    }
-
-    .loader-bar {
-      width: 180px;
-      height: 2px;
-      background: rgba(255, 255, 255, 0.06);
-      overflow: hidden;
-      border-radius: 999px;
-      position: relative;
-    }
-
-    .loader-bar span {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      animation: loadRun 1.1s linear infinite;
-    }
-
-    @keyframes loadRun {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    /* Background Elements */
-    .mesh-bg {
-      position: fixed; inset: 0;
-      z-index: -2;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(0, 230, 118, 0.12), transparent 55%),
-        radial-gradient(circle at 80% 10%, rgba(245, 196, 81, 0.18), transparent 45%),
-        radial-gradient(circle at 50% 90%, rgba(77, 182, 172, 0.18), transparent 55%);
-      opacity: 0.7;
-    }
-
-    .grid-noise {
-      position: fixed; inset: 0;
-      z-index: -1;
-      opacity: 0.15;
-      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), 
-                        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 60px 60px;
-      mix-blend-mode: soft-light;
-      pointer-events: none;
-    }
-
-    /* Layout */
-    .page-wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px 80px;
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 900;
-      backdrop-filter: blur(18px);
-      background: radial-gradient(circle at top left, rgba(0, 230, 118, 0.05), transparent 60%);
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .nav-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 18px 20px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-    }
-
-    .logo-mark {
-      width: 32px; height: 32px;
-      border-radius: 12px;
-      border: 1px solid rgba(245, 196, 81, 0.7);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Clash Display';
-      font-size: 0.9rem;
-      color: var(--gold);
-      background: radial-gradient(circle at top, rgba(245, 196, 81, 0.18), transparent 70%);
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .logo-text span:first-child {
-      font-family: 'Clash Display';
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      font-size: 0.95rem;
-    }
-
-    .logo-text span:last-child {
-      font-size: 0.75rem;
-      color: var(--text-sub);
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      list-style: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .nav-menu a {
-      text-decoration: none;
-      color: var(--text-sub);
-      position: relative;
-      padding-bottom: 4px;
-    }
-
-    .nav-menu a::after {
-      content: "";
-      position: absolute;
-      left: 0; bottom: 0;
-      width: 0; height: 1px;
-      background: linear-gradient(90deg, var(--accent), var(--gold));
-      transition: width 0.25s ease;
-    }
-
-    .nav-menu a:hover {
-      color: var(--text-main);
-    }
-
-    .nav-menu a:hover::after {
-      width: 100%;
-    }
-
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .pill-badge {
-      font-size: 0.7rem;
-      padding: 5px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 230, 118, 0.35);
-      color: var(--accent);
-      background: rgba(0, 230, 118, 0.05);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .btn-primary {
-      padding: 10px 22px;
-      border-radius: 999px;
-      border: none;
-      background: linear-gradient(120deg, var(--accent), #86ffb1);
-      color: #020305;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      box-shadow: 0 12px 40px rgba(0, 230, 118, 0.45);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .btn-primary span.dot {
-      width: 6px; height: 6px;
-      border-radius: 999px;
-      background: #020305;
-    }
-
-    .btn-primary:hover {
-      filter: brightness(1.08);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      padding: 10px 22px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: rgba(10, 10, 12, 0.85);
-      color: var(--text-sub);
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-    }
-
-    .btn-secondary i {
-      font-size: 0.9rem;
-    }
-
-    /* Hero */
-    .hero {
-      padding: 70px 0 40px;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 40px;
-      align-items: center;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 4px 10px 4px 4px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      background: rgba(6, 10, 15, 0.9);
-      margin-bottom: 18px;
-    }
-
-    .hero-kicker-dot {
-      width: 9px; height: 9px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 16px rgba(0, 230, 118, 0.9);
-    }
-
-    .hero-kicker span {
-      font-size: 0.78rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-sub);
-    }
-
-    .hero-title {
-      font-family: 'Clash Display';
-      font-size: clamp(2.6rem, 4vw, 3.6rem);
-      line-height: 1.08;
-      margin-bottom: 16px;
-    }
-
-    .hero-title span {
-      background: linear-gradient(120deg, #ffffff, #9be7ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-sub {
-      font-size: 0.98rem;
-      color: var(--text-sub);
-      max-width: 470px;
-      line-height: 1.7;
-      margin-bottom: 26px;
-    }
-
-    .hero-tags {
-      display: flex; flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 26px;
-    }
-
-    .tag {
-      font-size: 0.72rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      color: var(--text-sub);
-      background: rgba(8, 10, 14, 0.9);
-    }
-
-    .hero-cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .hero-note i {
-      color: var(--accent);
-    }
-
-    .hero-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 10px;
-    }
-
-    .metric {
-      padding-right: 16px;
-      border-right: 1px solid var(--border-soft);
-    }
-
-    .metric:last-child {
-      border-right: none;
-    }
-
-    .metric h3 {
-      font-family: 'Clash Display';
-      font-size: 1.4rem;
-      margin-bottom: 4px;
-      color: var(--accent);
-    }
-
-    .metric p {
-      font-size: 0.76rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-sub);
-    }
-
-    /* Hero Right Card */
-    .hero-card {
-      background: radial-gradient(circle at top left, rgba(245, 196, 81, 0.18), transparent 65%), 
-                  radial-gradient(circle at bottom right, rgba(0, 230, 118, 0.14), transparent 65%),
-                  rgba(6, 8, 13, 0.96);
-      border-radius: var(--radius-xl);
-      padding: 22px 22px 22px;
-      border: 1px solid rgba(255, 255, 255, 0.09);
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at 0 0, rgba(255,255,255,0.16), transparent 60%);
-      opacity: 0.1;
-      pointer-events: none;
-    }
-
-    .hero-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .hero-card-title {
-      font-size: 0.85rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-sub);
-    }
-
-    .hero-avatar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .hero-avatar-circle {
-      width: 32px; height: 32px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    .hero-avatar span {
-      font-size: 0.78rem;
-      color: var(--text-sub);
-    }
-
-    .hero-card-main {
-      margin-bottom: 14px;
-    }
-
-    .hero-card-main h3 {
-      font-family: 'Clash Display';
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
-
-    .hero-card-main p {
-      font-size: 0.86rem;
-      color: var(--text-sub);
-    }
-
-    .hero-card-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .hc-stat {
-      padding: 8px 10px;
-      border-radius: 12px;
-      background: rgba(3, 5, 9, 0.85);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .hc-stat span.label {
-      font-size: 0.7rem;
-      color: var(--text-sub);
-    }
-
-    .hc-stat span.value {
-      display: block;
-      margin-top: 4px;
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .hero-card-foot {
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px dashed rgba(255, 255, 255, 0.16);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      color: var(--text-sub);
-    }
-
-    .hero-card-pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.55);
-      border: 1px solid rgba(245, 196, 81, 0.45);
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .hero-card-pill i {
-      color: var(--gold);
-    }
-
-    /* Section Generic */
-    .section {
-      margin-top: 60px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 20px;
-      margin-bottom: 30px;
-    }
-
-    .section-title {
-      font-family: 'Clash Display';
-      font-size: 1.8rem;
-    }
-
-    .section-kicker {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-sub);
-      margin-bottom: 6px;
-    }
-
-    .section-sub {
-      font-size: 0.9rem;
-      color: var(--text-sub);
-      max-width: 380px;
-    }
-
-    .section-badge {
-      font-size: 0.72rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--text-sub);
-    }
-
-    /* Services Grid */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-
-    .service-card {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      padding: 20px 18px;
-      border: 1px solid var(--border-soft);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-    }
-
-    .service-card::before {
-      content: "";
-      position: absolute;
-      width: 140px;
-      height: 140px;
-      border-radius: 100%;
-      background: radial-gradient(circle, rgba(0, 230, 118, 0.18), transparent 60%);
-      opacity: 0;
-      transform: translate(-40%, -40%);
-      pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(0, 230, 118, 0.4);
-      background: rgba(10, 12, 18, 0.98);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.8);
-    }
-
-    .service-card:hover::before {
-      opacity: 1;
-      transform: translate(0, 0);
-    }
-
-    .service-icon {
-      width: 36px; height: 36px;
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(0, 0, 0, 0.7);
-      border: 1px solid rgba(255,255,255,0.12);
-      margin-bottom: 14px;
-      font-size: 1.1rem;
-      color: var(--gold);
-    }
-
-    .service-title {
-      font-size: 1rem;
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
-
-    .service-desc {
-      font-size: 0.86rem;
-      color: var(--text-sub);
-      margin-bottom: 12px;
-    }
-
-    .service-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 10px;
-    }
-
-    .service-tag {
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.06);
-      color: var(--text-sub);
-    }
-
-    .service-list {
-      list-style: none;
-      margin-top: 8px;
-    }
-
-    .service-list li {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-      margin-bottom: 4px;
-      padding-left: 14px;
-      position: relative;
-    }
-
-    .service-list li::before {
-      content: "›";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--accent);
-    }
-
-    /* Process Section */
-    .process-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 24px;
-    }
-
-    .process-steps {
-      display: grid;
-      gap: 14px;
-    }
-
-    .step-item {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 12px;
-      align-items: flex-start;
-    }
-
-    .step-number {
-      width: 26px; height: 26px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.78);
-      border: 1px solid rgba(255,255,255,0.18);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.78rem;
-      color: var(--gold);
-    }
-
-    .step-title {
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-    }
-
-    .step-text {
-      font-size: 0.84rem;
-      color: var(--text-sub);
-    }
-
-    .process-highlight {
-      background: radial-gradient(circle at top, rgba(0, 230, 118, 0.2), transparent 65%), 
-                  rgba(4, 6, 10, 0.96);
-      border-radius: var(--radius-lg);
-      padding: 18px 16px;
-      border: 1px solid rgba(0, 230, 118, 0.4);
-      box-shadow: 0 12px 50px rgba(0, 0, 0, 0.9);
-      font-size: 0.86rem;
-      color: var(--text-sub);
-    }
-
-    .process-highlight h3 {
-      font-family: 'Clash Display';
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-      color: #fff;
-    }
-
-    .process-highlight ul {
-      list-style: none;
-      margin-top: 6px;
-    }
-
-    .process-highlight li {
-      margin-bottom: 4px;
-      padding-left: 14px;
-      position: relative;
-      font-size: 0.84rem;
-    }
-
-    .process-highlight li::before {
-      content: "•";
-      position: absolute;
-      left: 2px;
-      top: -1px;
-      color: var(--accent);
-    }
-
-    /* Tax Calculator */
-    .calc-wrap {
-      background: linear-gradient(160deg, #06070d, #020305);
-      padding: 26px 20px 24px;
-      border-radius: var(--radius-xl);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
-      max-width: 780px;
-      margin: 0 auto;
-    }
-
-    .calc-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 20px;
-      align-items: center;
-    }
-
-    .calc-inputs {
-      display: grid;
-      gap: 10px;
-    }
-
-    .inp {
-      width: 100%;
-      padding: 12px 12px;
-      background: rgba(4, 6, 10, 0.96);
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      color: #fff;
-      font-size: 0.9rem;
-      outline: none;
-    }
-
-    .inp::placeholder {
-      color: rgba(255, 255, 255, 0.35);
-    }
-
-    select.inp {
-      cursor: pointer;
-    }
-
-    .btn-main {
-      width: 100%;
-      padding: 12px;
-      border-radius: 12px;
-      border: none;
-      background: linear-gradient(120deg, var(--accent), #86ffb1);
-      color: #020305;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      box-shadow: 0 14px 40px rgba(0, 230, 118, 0.45);
-    }
-
-    .btn-main:hover {
-      filter: brightness(1.05);
-      transform: translateY(-1px);
-    }
-
-    .calc-result {
-      text-align: left;
-    }
-
-    .calc-title {
-      font-size: 0.86rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-sub);
-      margin-bottom: 8px;
-    }
-
-    .calc-value {
-      font-family: 'Clash Display';
-      font-size: 2rem;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .calc-breakup {
-      font-size: 0.82rem;
-      color: var(--text-sub);
       line-height: 1.6;
     }
 
-    /* Testimonials */
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif; /* The Luxury Font */
+      font-weight: 500;
+      color: #000;
     }
 
-    .testimonial-card {
-      background: rgba(6, 8, 13, 0.96);
-      border-radius: var(--radius-lg);
-      padding: 18px 16px;
-      border: 1px solid var(--border-soft);
-      font-size: 0.84rem;
-      color: var(--text-sub);
-    }
+    /* SMOOTH SCROLL */
+    html { scroll-behavior: smooth; }
 
-    .testimonial-header {
+    /* HEADER (Transparent to White) */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 25px 50px;
+      transition: all 0.4s ease;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 10px;
+      background: transparent;
     }
 
-    .testimonial-name {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: #fff;
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px 50px;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.05);
     }
 
-    .testimonial-meta {
-      font-size: 0.74rem;
-      color: var(--text-sub);
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #1a1a1a;
+      letter-spacing: -0.5px;
     }
+    .logo span { color: var(--text-light); font-size: 0.9rem; font-family: 'Manrope', sans-serif; font-weight: 400; margin-left: 10px;}
 
-    .testimonial-stars {
-      color: var(--gold);
-      font-size: 0.88rem;
-    }
-
-    /* Contact Section */
-    .contact-section {
-      text-align: center;
-    }
-
-    .contact-title {
-      font-family: 'Clash Display';
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .contact-sub {
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: #1a1a1a;
       font-size: 0.9rem;
-      color: var(--text-sub);
-      margin-bottom: 24px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
     }
 
-    .contact-container {
+    /* Underline animation like Tara Travel */
+    .nav-links a::after {
+      content: ''; position: absolute; width: 0; height: 1px;
+      bottom: -5px; left: 0; background-color: #000;
+      transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* HERO SECTION (Big Image) */
+    .hero {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      /* High Quality Office/Abstract Image */
+      background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      filter: brightness(0.9);
+      transform: scale(1.1);
+      transition: transform 10s ease; /* Subtle zoom */
+    }
+    .hero:hover .hero-bg { transform: scale(1); }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      font-style: italic; /* Elegant touch */
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-bottom: 40px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .btn-hero {
+      padding: 18px 40px;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+    .btn-hero:hover { background: #000; color: #fff; }
+
+    /* INTRO SECTION */
+    .intro {
+      padding: 120px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .intro h2 { font-size: 2.5rem; margin-bottom: 30px; line-height: 1.3; }
+    .intro p { font-size: 1.1rem; color: var(--text-light); }
+
+    /* SERVICES (Masonry/Grid Style like Tara) */
+    .services-section {
+      padding: 50px 5%;
+      background: var(--light-gray);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .section-title span {
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--text-light); display: block; margin-bottom: 10px;
+    }
+    .section-title h2 { font-size: 3rem; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+
+    .service-card {
+      background: #fff;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.4s ease;
+      position: relative;
+    }
+
+    /* Image Effect */
+    .service-img {
+      height: 250px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .service-card:hover .service-img img { transform: scale(1.1); }
+
+    .service-info {
+      padding: 30px;
+    }
+    .service-info h3 { font-size: 1.8rem; margin-bottom: 10px; }
+    .service-info p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; }
+    
+    .service-link {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #000;
+      font-weight: 700;
+      text-decoration: none;
+      border-bottom: 1px solid #000;
+      padding-bottom: 3px;
+    }
+
+    /* STATS (Clean Number Row) */
+    .stats {
+      padding: 100px 5%;
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 1px solid #eee;
+    }
+    .stat-item { text-align: center; }
+    .stat-item h2 { font-size: 3.5rem; margin-bottom: 10px; }
+    .stat-item p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); }
+
+    /* CONTACT (Minimalist) */
+    .contact {
+      padding: 120px 20px;
+      text-align: center;
+      background: #fff;
+    }
+    .contact h2 { font-size: 3rem; margin-bottom: 40px; }
+    
+    .contact-links {
       display: flex;
       justify-content: center;
+      gap: 30px;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 16px;
     }
-
-    .social-btn {
-      width: 52px; height: 52px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      background: rgba(8, 10, 15, 0.96);
-      color: #fff;
-      font-size: 1.2rem;
+    
+    .contact-btn-large {
+      padding: 20px 50px;
+      border: 1px solid #000;
+      color: #000;
       text-decoration: none;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: 0.3s;
+    }
+    .contact-btn-large:hover {
+      background: #000;
+      color: #fff;
+    }
+    
+    .contact-btn-filled {
+      background: #000;
+      color: #fff;
+    }
+    .contact-btn-filled:hover {
+      background: #333;
+      transform: translateY(-5px);
     }
 
-    .social-btn:hover {
-      transform: translateY(-3px);
-      background: var(--accent);
-      color: #020305;
-      border-color: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 14px 36px rgba(0, 230, 118, 0.5);
-    }
-
-    .contact-note {
-      font-size: 0.8rem;
-      color: var(--text-sub);
-    }
-
+    /* FOOTER */
     footer {
-      text-align: center;
-      padding: 34px 20px 30px;
-      border-top: 1px solid var(--border-soft);
-      color: var(--text-sub);
-      font-size: 0.78rem;
-      margin-top: 40px;
+      background: #111;
+      color: #fff;
+      padding: 80px 5%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
     }
+    
+    .footer-col h4 { color: #fff; margin-bottom: 20px; font-size: 1.2rem; }
+    .footer-col p, .footer-col a { color: #999; display: block; margin-bottom: 10px; text-decoration: none; font-size: 0.9rem; }
+    .footer-col a:hover { color: #fff; }
 
-    /* Responsive */
-    @media (max-width: 960px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-card {
-        order: -1;
-      }
-      .grid-3 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .testimonials-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .process-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .calc-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+    /* Floating WhatsApp */
+    .float-wa {
+      position: fixed; bottom: 30px; right: 30px;
+      width: 60px; height: 60px; background: #25D366;
+      border-radius: 50%; color: #fff; display: flex;
+      align-items: center; justify-content: center;
+      font-size: 30px; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      transition: 0.3s;
     }
+    .float-wa:hover { transform: scale(1.1); }
 
-    @media (max-width: 720px) {
-      header {
-        position: fixed;
-      }
-      .hero {
-        padding-top: 90px;
-      }
-      .nav-menu {
-        display: none;
-      }
-      .nav-cta .pill-badge {
-        display: none;
-      }
-      .page-wrap {
-        padding-bottom: 60px;
-      }
-      .grid-3 {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .testimonials-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-card {
-        padding: 18px 16px;
-      }
-      .hero-title {
-        font-size: 2.25rem;
-      }
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.8rem; }
+      header { padding: 20px; }
+      .nav-links { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats { flex-direction: column; gap: 40px; }
+      footer { flex-direction: column; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Cursor -->
-  <div class="cursor-dot"></div>
-  <div class="cursor-outline"></div>
-
-  <!-- Loader -->
-  <div id="loader">
-    <div class="loader-inner">
-      <div class="loader-text">MOHIT&nbsp;PRASAD</div>
-      <div class="loader-bar"><span></span></div>
-    </div>
-  </div>
-
-  <!-- Background -->
-  <div class="mesh-bg"></div>
-  <div class="grid-noise"></div>
-
-  <!-- Header -->
-  <header>
-    <div class="nav-inner">
-      <a href="#top" class="logo">
-        <div class="logo-mark">MP</div>
-        <div class="logo-text">
-          <span>Mohit Prasad</span>
-          <span>Elite Financial Consultancy</span>
-        </div>
-      </a>
-
-      <ul class="nav-menu">
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#process">PROCESS</a></li>
-        <li><a href="#tools">TOOLS</a></li>
-        <li><a href="#testimonials">TRUST</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-
-      <div class="nav-cta">
-        <div class="pill-badge">Delhi • GST • Tax • Finance</div>
-        <a href="#contact" class="btn-primary">
-          <span class="dot"></span> Book Call
-        </a>
-      </div>
-    </div>
+  <header id="header">
+    <a href="#" class="logo">Mohit Prasad <span>Finance</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Expertise</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </header>
 
-  <main class="page-wrap" id="top">
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="hero-inner">
-        <div data-aos="fade-right">
-          <div class="hero-kicker">
-            <div class="hero-kicker-dot"></div>
-            <span>Trusted advisor for serious businesses</span>
-          </div>
-          <h1 class="hero-title">
-            Design your <span>Financial System</span><br>not just your returns.
-          </h1>
-          <p class="hero-sub">
-            Strategic GST, Taxation & Corporate Finance solutions for founders, traders and service businesses in Delhi NCR — with white-glove execution and complete data privacy.
-          </p>
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
+      <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 20px;">Delhi Based Tax Consultant</p>
+      <h1>Precision. Integrity. Growth.</h1>
+      <p>Simplifying financial complexities for businesses and individuals.</p>
+      <a href="#services" class="btn-hero">Explore Services</a>
+    </div>
+  </section>
 
-          <div class="hero-tags">
-            <div class="tag">End-to-end GST compliance</div>
-            <div class="tag">Smart tax saving</div>
-            <div class="tag">Loan-ready financials</div>
-          </div>
+  <section class="intro" id="about">
+    <div data-aos="fade-up">
+      <h2>"Accounting is the language of business. We ensure yours speaks success."</h2>
+      <p>I am Mohit Prasad, providing high-end GST, Income Tax, and Corporate solutions. We move beyond basic filing to provide strategic financial advice.</p>
+    </div>
+  </section>
 
-          <div class="hero-cta-row">
-            <a href="#contact" class="btn-primary">
-              <span class="dot"></span> Book Consultation
-            </a>
-            <a href="#services" class="btn-secondary">
-              <i class="fas fa-layer-group"></i> View Services
-            </a>
-          </div>
+  <section class="stats">
+    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+      <h2>500+</h2>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+      <h2>10+</h2>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+      <h2>100%</h2>
+      <p>Accuracy</p>
+    </div>
+  </section>
 
-          <div class="hero-note">
-            <i class="fas fa-lock"></i>
-            <span>100% confidentiality • No data shared with third parties</span>
-          </div>
+  <section class="services-section" id="services">
+    <div class="section-title" data-aos="fade-up">
+      <span>Our Expertise</span>
+      <h2>Curated Financial Services</h2>
+    </div>
 
-          <div class="hero-metrics">
-            <div class="metric">
-              <h3 class="counter" data-target="500">0</h3>
-              <p>Clients Served</p>
-            </div>
-            <div class="metric">
-              <h3 class="counter" data-target="10">0</h3>
-              <p>Years in Finance</p>
-            </div>
-            <div class="metric">
-              <h3>24–48h</h3>
-              <p>Typical Response</p>
-            </div>
-          </div>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop" alt="GST">
         </div>
-
-        <aside class="hero-card" data-aos="fade-left">
-          <div class="hero-card-header">
-            <div>
-              <div class="hero-card-title">Live Portfolio Snapshot</div>
-            </div>
-            <div class="hero-avatar">
-              <div class="hero-avatar-circle">MP</div>
-              <span>Lead Consultant</span>
-            </div>
-          </div>
-
-          <div class="hero-card-main">
-            <h3>Financial Control Room</h3>
-            <p>See your GST, tax and cash-flow status in one single view — instead of ten Excel sheets and five apps.</p>
-
-            <div class="hero-card-stats">
-              <div class="hc-stat">
-                <span class="label">GST Status</span>
-                <span class="value">On-time</span>
-              </div>
-              <div class="hc-stat">
-                <span class="label">ITR Filing</span>
-                <span class="value">Ready</span>
-              </div>
-              <div class="hc-stat">
-                <span class="label">Loan Score</span>
-                <span class="value">Bank-Friendly</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-card-foot">
-            <div>Built for founders who hate paperwork but love clean numbers.</div>
-            <div class="hero-card-pill">
-              <i class="fas fa-shield-check"></i> Audit-Ready
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="section" id="services">
-      <div class="section-header" data-aos="fade-up">
-        <div>
-          <div class="section-kicker">Services</div>
-          <h2 class="section-title">What we handle for you</h2>
-          <p class="section-sub">From first GST registration to complex project finance documentation — you focus on business, we handle the numbers.</p>
-        </div>
-        <div class="section-badge">Custom retainers for serious businesses</div>
-      </div>
-
-      <div class="grid-3">
-        <!-- GST -->
-        <article class="service-card" data-aos="fade-up" data-aos-delay="50">
-          <div class="service-icon"><i class="fas fa-qrcode"></i></div>
-          <h3 class="service-title">GST Compliance Suite</h3>
-          <p class="service-desc">End-to-end GST lifecycle: perfect for traders, service providers and e-commerce.</p>
-          <div class="service-tags">
-            <span class="service-tag">GSTR-1 & 3B</span>
-            <span class="service-tag">GSTR-9</span>
-            <span class="service-tag">E-way bills</span>
-          </div>
-          <ul class="service-list">
-            <li>Registration, amendments & cancellation</li>
-            <li>Monthly & quarterly return filing</li>
-            <li>Input tax credit review & mismatch fixing</li>
-            <li>Regular compliance alerts and follow-ups</li>
-          </ul>
-        </article>
-
-        <!-- Income Tax -->
-        <article class="service-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="service-icon"><i class="fas fa-file-invoice-dollar"></i></div>
-          <h3 class="service-title">Income Tax Strategy</h3>
-          <p class="service-desc">Smart tax planning to save legally while keeping your profile clean for future loans.</p>
-          <div class="service-tags">
-            <span class="service-tag">ITR-3 / ITR-4</span>
-            <span class="service-tag">Capital gains</span>
-            <span class="service-tag">Notices</span>
-          </div>
-          <ul class="service-list">
-            <li>Business & professional ITR filing</li>
-            <li>Capital gains on property & investments</li>
-            <li>Reply to defective returns and notices</li>
-            <li>Year-round tax planning — not just July rush</li>
-          </ul>
-        </article>
-
-        <!-- Accounting -->
-        <article class="service-card" data-aos="fade-up" data-aos-delay="150">
-          <div class="service-icon"><i class="fas fa-calculator"></i></div>
-          <h3 class="service-title">Corporate Accounting</h3>
-          <p class="service-desc">Virtual accounts team for businesses that need structure but not a full in-house staff.</p>
-          <div class="service-tags">
-            <span class="service-tag">Books of accounts</span>
-            <span class="service-tag">Bank reco</span>
-          </div>
-          <ul class="service-list">
-            <li>Daily bookkeeping & ledger maintenance</li>
-            <li>Balance Sheet & Profit & Loss preparation</li>
-            <li>Bank reconciliation & vendor ageing</li>
-            <li>Inventory and cash-flow tracking</li>
-          </ul>
-        </article>
-
-        <!-- Company Registration -->
-        <article class="service-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="service-icon"><i class="fas fa-building"></i></div>
-          <h3 class="service-title">Company Setup</h3>
-          <p class="service-desc">Structure your business as Pvt Ltd, LLP or OPC with all mandatory registrations.</p>
-          <div class="service-tags">
-            <span class="service-tag">Pvt Ltd</span>
-            <span class="service-tag">LLP</span>
-            <span class="service-tag">DSC</span>
-          </div>
-          <ul class="service-list">
-            <li>Private Limited / LLP / OPC incorporation</li>
-            <li>Partnership deed drafting</li>
-            <li>DIN, DSC & PAN/TAN assistance</li>
-            <li>Post-incorporation compliance roadmap</li>
-          </ul>
-        </article>
-
-        <!-- TDS & Payroll -->
-        <article class="service-card" data-aos="fade-up" data-aos-delay="250">
-          <div class="service-icon"><i class="fas fa-percent"></i></div>
-          <h3 class="service-title">TDS & Payroll Desk</h3>
-          <p class="service-desc">Clean salary and TDS records so employees and departments stay happy.</p>
-          <div class="service-tags">
-            <span class="service-tag">TDS returns</span>
-            <span class="service-tag">Form 16</span>
-          </div>
-          <ul class="service-list">
-            <li>Monthly TDS working & return filing</li>
-            <li>Form 16 and Form 16A issuance</li>
-            <li>Payroll processing & payslip design</li>
-            <li>Compliance with PF / ESIC (on request)</li>
-          </ul>
-        </article>
-
-        <!-- Trademark & IP -->
-        <article class="service-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="service-icon"><i class="fas fa-copyright"></i></div>
-          <h3 class="service-title">Brand & IP Shield</h3>
-          <p class="service-desc">Lock your name, logo and brand identity before competitors try to copy it.</p>
-          <div class="service-tags">
-            <span class="service-tag">Trademark search</span>
-            <span class="service-tag">TM filing</span>
-          </div>
-          <ul class="service-list">
-            <li>Trademark search & class selection</li>
-            <li>TM application filing & monitoring</li>
-            <li>Objection & reply drafting support</li>
-            <li>Basic IP strategy for SMEs</li>
-          </ul>
-        </article>
-
-        <!-- Project Finance -->
-        <article class="service-card" data-aos="fade-up" data-aos-delay="350">
-          <div class="service-icon"><i class="fas fa-coins"></i></div>
-          <h3 class="service-title">Project Finance Docs</h3>
-          <p class="service-desc">Present your numbers in “bank language” to unlock better loan approvals.</p>
-          <div class="service-tags">
-            <span class="service-tag">CMA data</span>
-            <span class="service-tag">Projections</span>
-          </div>
-          <ul class="service-list">
-            <li>CMA data preparation for banks</li>
-            <li>Projected financial statements</li>
-            <li>Project reports for OD/CC/term loans</li>
-            <li>Documentation checklist & guidance</li>
-          </ul>
-        </article>
-
-        <!-- Licenses -->
-        <article class="service-card" data-aos="fade-up" data-aos-delay="400">
-          <div class="service-icon"><i class="fas fa-stamp"></i></div>
-          <h3 class="service-title">Licenses & Approvals</h3>
-          <p class="service-desc">All the boring approvals you need to run and scale smoothly.</p>
-          <div class="service-tags">
-            <span class="service-tag">FSSAI</span>
-            <span class="service-tag">IEC</span>
-            <span class="service-tag">Shops Act</span>
-          </div>
-          <ul class="service-list">
-            <li>Food license (FSSAI) registration</li>
-            <li>Import Export Code (IEC)</li>
-            <li>Shop & Establishment registration</li>
-            <li>Other state-wise registrations on request</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section class="section" id="process">
-      <div class="section-header" data-aos="fade-up">
-        <div>
-          <div class="section-kicker">How it works</div>
-          <h2 class="section-title">Simple, clear and predictable</h2>
-          <p class="section-sub">No confusion, no surprise charges. A clear, 3-step workflow designed for busy business owners.</p>
-        </div>
-        <div class="section-badge">Starting from first discovery call</div>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-steps" data-aos="fade-right">
-          <div class="step-item">
-            <div class="step-number">1</div>
-            <div>
-              <div class="step-title">Discovery & Audit</div>
-              <div class="step-text">We understand your business model, current filings, pending issues and targets for the next 12–18 months.</div>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-number">2</div>
-            <div>
-              <div class="step-title">Custom Compliance Plan</div>
-              <div class="step-text">You get a clear plan: what we’ll handle monthly, what stays in-house, and what documents you need to send — with timelines.</div>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-number">3</div>
-            <div>
-              <div class="step-title">Ongoing Execution & Review</div>
-              <div class="step-text">We execute the plan, send reminders, and review numbers quarterly so your business stays loan-ready and audit-ready.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="process-highlight" data-aos="fade-left">
-          <h3>Built for Delhi & NCR businesses</h3>
-          <p>We are used to real-world situations — cash components, multiple bank accounts, “old accountant” data and delayed records. The system is designed to:</p>
-          <ul>
-            <li>Bring messy books into a clean, structured format</li>
-            <li>Make future loan processing smoother with banks & NBFCs</li>
-            <li>Reduce last-minute panic around due dates</li>
-            <li>Give you a simple view: “Where is my business really standing?”</li>
-          </ul>
+        <div class="service-info">
+          <h3>GST Compliance</h3>
+          <p>End-to-end GST management, from registration to monthly filing and reconciliation.</p>
+          <a href="#contact" class="service-link">Learn More</a>
         </div>
       </div>
-    </section>
 
-    <!-- Tools - Tax Calculator -->
-    <section class="section" id="tools">
-      <div class="section-header" data-aos="fade-up" style="margin-bottom: 20px;">
-        <div>
-          <div class="section-kicker">Tools</div>
-          <h2 class="section-title">Quick GST Calculator</h2>
-          <p class="section-sub">Estimate GST on your invoice amount in seconds. For detailed planning, always consult directly.</p>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?q=80&w=800&auto=format&fit=crop" alt="Tax">
         </div>
-        <div class="section-badge">Approximation • Not a legal opinion</div>
-      </div>
-
-      <div class="calc-wrap" data-aos="zoom-in">
-        <div class="calc-grid">
-          <div class="calc-inputs">
-            <input type="number" id="amount" class="inp" placeholder="Enter Invoice Amount (₹)">
-            <select id="gstRate" class="inp">
-              <option value="18">18% (Standard)</option>
-              <option value="5">5% (Essential / Low)</option>
-              <option value="12">12% (Mid)</option>
-              <option value="28">28% (Luxury / High)</option>
-            </select>
-            <button class="btn-main" onclick="calc()">Calculate Liability</button>
-          </div>
-
-          <div class="calc-result">
-            <div class="calc-title">Total GST Amount</div>
-            <div id="calcMain" class="calc-value">₹0</div>
-            <div class="calc-breakup" id="calcBreakup">
-              Enter an amount and select a slab to see the GST payable, along with CGST and SGST split (for intra-state supplies).
-            </div>
-          </div>
+        <div class="service-info">
+          <h3>Income Tax</h3>
+          <p>Strategic ITR filing for salaried individuals and businesses to maximize savings.</p>
+          <a href="#contact" class="service-link">Learn More</a>
         </div>
       </div>
-    </section>
 
-    <!-- Testimonials -->
-    <section class="section" id="testimonials">
-      <div class="section-header" data-aos="fade-up">
-        <div>
-          <div class="section-kicker">Trust</div>
-          <h2 class="section-title">Why clients stay for years</h2>
-          <p class="section-sub">Some words from business owners who shifted to a structured financial system—and didn’t look back.</p>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" alt="Accounting">
         </div>
-        <div class="section-badge">Names & industries editable as you get real reviews</div>
+        <div class="service-info">
+          <h3>Corporate Accounting</h3>
+          <p>Outsourced bookkeeping services to keep your financial records audit-ready.</p>
+          <a href="#contact" class="service-link">Learn More</a>
+        </div>
       </div>
 
-      <div class="testimonials-grid">
-        <article class="testimonial-card" data-aos="fade-up" data-aos-delay="50">
-          <div class="testimonial-header">
-            <div>
-              <div class="testimonial-name">Arjun Mehta</div>
-              <div class="testimonial-meta">Wholesale Electronics • Delhi</div>
-            </div>
-            <div class="testimonial-stars">
-              ★★★★★
-            </div>
-          </div>
-          <p>“Earlier GST, ITR and loan documents were all handled by different people. Mohit streamlined everything. Now I only track one dashboard and one WhatsApp thread.”</p>
-        </article>
-
-        <article class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="testimonial-header">
-            <div>
-              <div class="testimonial-name">Kritika Designs</div>
-              <div class="testimonial-meta">D2C Fashion Brand</div>
-            </div>
-            <div class="testimonial-stars">
-              ★★★★★
-            </div>
-          </div>
-          <p>“We started as a small Instagram store. As sales increased, compliance became scary. Mohit’s team handled registrations, GST, and proper accounting so we could focus on content & product.”</p>
-        </article>
-
-        <article class="testimonial-card" data-aos="fade-up" data-aos-delay="150">
-          <div class="testimonial-header">
-            <div>
-              <div class="testimonial-name">Sharma Logistics</div>
-              <div class="testimonial-meta">Transport & Warehousing</div>
-            </div>
-            <div class="testimonial-stars">
-              ★★★★★
-            </div>
-          </div>
-          <p>“For us, e-way bills and TDS were always an issue. Now everything is on schedule and banks are more comfortable extending limits. Execution is clean and communication is clear.”</p>
-        </article>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Company">
+        </div>
+        <div class="service-info">
+          <h3>Business Setup</h3>
+          <p>Company Registration (Pvt Ltd, LLP), MSME, and Trademark services.</p>
+          <a href="#contact" class="service-link">Learn More</a>
+        </div>
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section contact-section" id="contact">
-      <h2 class="contact-title" data-aos="fade-up">Let’s structure your finances properly</h2>
-      <p class="contact-sub" data-aos="fade-up" data-aos-delay="50">
-        Share your requirement on WhatsApp, call or email. We’ll review your current situation and suggest a practical, no-nonsense plan.
-      </p>
-
-      <div class="contact-container" data-aos="zoom-in">
-        <a href="https://wa.me/918595366682" class="social-btn" data-hover>
-          <i class="fab fa-whatsapp"></i>
-        </a>
-        <a href="tel:+918595366682" class="social-btn" data-hover>
-          <i class="fas fa-phone"></i>
-        </a>
-        <a href="mailto:mohitparsad371@gmail.com" class="social-btn" data-hover>
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://www.instagram.com/mohit_shah0002" class="social-btn" data-hover>
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mohit-prasad-769316336" class="social-btn" data-hover>
-          <i class="fab fa-linkedin-in"></i>
-        </a>
+      
+      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1565514020176-dbf2277e491e?q=80&w=800&auto=format&fit=crop" alt="Loans">
+        </div>
+        <div class="service-info">
+          <h3>Project Finance</h3>
+          <p>CMA Data and Project Reports for securing business loans easily.</p>
+          <a href="#contact" class="service-link">Learn More</a>
+        </div>
       </div>
 
-      <div class="contact-note">
-        Prefer weekend discussions? Mention it in your first WhatsApp message for priority slots.
+       <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="TDS">
+        </div>
+        <div class="service-info">
+          <h3>TDS & Payroll</h3>
+          <p>Handling employee taxation, Form 16, and monthly TDS returns.</p>
+          <a href="#contact" class="service-link">Learn More</a>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div data-aos="fade-up">
+      <p style="text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">Get in Touch</p>
+      <h2>Ready to optimize your finances?</h2>
+      <div class="contact-links">
+        <a href="https://wa.me/918595366682" class="contact-btn-large contact-btn-filled">WhatsApp Us</a>
+        <a href="mailto:mohitparsad371@gmail.com" class="contact-btn-large">Email Us</a>
+        <a href="tel:+918595366682" class="contact-btn-large">Call Now</a>
+      </div>
+    </div>
+  </section>
 
   <footer>
-    © 2025 Mohit Prasad. Elite Financial Consultancy. All rights reserved.
+    <div class="footer-col">
+      <h4 class="logo" style="color:#fff;">Mohit Prasad</h4>
+      <p>Providing excellence in financial<br>consultancy since 2015.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Address</h4>
+      <p>New Delhi, India</p>
+      <p>+91 8595366682</p>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://www.instagram.com/mohit_shah0002" target="_blank">Instagram</a>
+      <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank">LinkedIn</a>
+      <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank">Facebook</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <p>&copy; 2025 Mohit Prasad.</p>
+      <p>All Rights Reserved.</p>
+    </div>
   </footer>
 
-  <!-- Scripts -->
+  <a href="https://wa.me/918595366682" class="float-wa" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Loader
-    window.addEventListener('load', () => {
-      const loader = document.getElementById('loader');
-      setTimeout(() => {
-        loader.style.opacity = '0';
-        loader.style.visibility = 'hidden';
-      }, 1400);
+    // Initialize Animation on Scroll
+    AOS.init({
+      duration: 1000,
+      offset: 100,
+      once: true
     });
 
-    // AOS
-    AOS.init({ duration: 900, once: true, easing: 'ease-out-cubic' });
-
-    // Cursor
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorOutline = document.querySelector('.cursor-outline');
-
-    window.addEventListener("mousemove", function(e) {
-      const posX = e.clientX;
-      const posY = e.clientY;
-      cursorDot.style.left = posX + "px";
-      cursorDot.style.top = posY + "px";
-      cursorOutline.animate(
-        { left: posX + "px", top: posY + "px" },
-        { duration: 450, fill: "forwards" }
-      );
-    });
-
-    // Hover effect on interactive elements
-    const hoverables = document.querySelectorAll('a, button, .service-card, .social-btn');
-    hoverables.forEach(el => {
-      el.addEventListener('mouseenter', () => cursorOutline.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => cursorOutline.classList.remove('cursor-hover'));
-    });
-
-    // Counters
-    const counters = document.querySelectorAll('.counter');
-    const startCounters = () => {
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const updateCount = () => {
-          const count = +counter.innerText;
-          const inc = target / 200;
-          if (count < target) {
-            counter.innerText = Math.ceil(count + inc);
-            setTimeout(updateCount, 20);
-          } else {
-            counter.innerText = target + "+";
-          }
-        };
-        updateCount();
-      });
-    };
-
-    setTimeout(startCounters, 1800);
-
-    // GST Calculator
-    function calc() {
-      const val = parseFloat(document.getElementById('amount').value || 0);
-      const rate = parseFloat(document.getElementById('gstRate').value || 0);
-      const mainEl = document.getElementById('calcMain');
-      const breakupEl = document.getElementById('calcBreakup');
-
-      if (!val || val <= 0) {
-        mainEl.innerText = "₹0";
-        breakupEl.innerText = "Please enter a valid invoice amount to calculate GST.";
-        return;
+    // Header Background Change on Scroll
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
       }
-
-      const gstAmount = (val * rate) / 100;
-      const cgst = gstAmount / 2;
-      const sgst = gstAmount / 2;
-      const totalWithGst = val + gstAmount;
-
-      mainEl.innerText = "₹" + gstAmount.toLocaleString("en-IN", { maximumFractionDigits: 2 });
-      breakupEl.innerHTML = 
-        "Approx. GST payable at <strong>" + rate + "%</strong> on ₹" + val.toLocaleString("en-IN", { maximumFractionDigits: 2 }) + "<br>" +
-        "CGST: <strong>₹" + cgst.toLocaleString("en-IN", { maximumFractionDigits: 2 }) + "</strong><br>" +
-        "SGST: <strong>₹" + sgst.toLocaleString("en-IN", { maximumFractionDigits: 2 }) + "</strong><br>" +
-        "Invoice total with GST: <strong>₹" + totalWithGst.toLocaleString("en-IN", { maximumFractionDigits: 2 }) + "</strong>";
-    }
+    });
   </script>
 </body>
 </html>
