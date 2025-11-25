@@ -1,29 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohit Prasad | Financial Consultant</title>
-  <meta name="description" content="Premium Tax & Accounting Services in Delhi." />
-  
-  <meta name="google-site-verification" content="UQzKVCtNI6tK-c2k4xqOK0uaN3QoHN2-j7UBjewuDwo" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>Mohit Prasad | Financial & Tax Consultant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Practical GST, Income Tax, Accounting & Business Structuring services for individuals and small businesses in Delhi NCR.">
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600&f[]=satoshi@300,400,500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --text-light: #666666;
-      --accent: #D4AF37; /* Subtle Gold */
-      --btn-bg: #1a1a1a;
-      --btn-text: #ffffff;
-      --light-gray: #f9f9f9;
+      --bg: #05070b;
+      --bg-soft: #090c13;
+      --accent: #e0c06e;
+      --accent-soft: rgba(224, 192, 110, 0.1);
+      --text-main: #f5f5f5;
+      --text-sub: #a1a5b3;
+      --border: rgba(255, 255, 255, 0.08);
+      --radius: 18px;
+      --max-width: 1080px;
     }
 
     * {
@@ -33,464 +27,775 @@
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Manrope', sans-serif;
-      overflow-x: hidden;
-      line-height: 1.6;
+      font-family: "Satoshi", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #101321 0, #05070b 40%, #020308 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif; /* The Luxury Font */
-      font-weight: 500;
-      color: #000;
-    }
-
-    /* SMOOTH SCROLL */
-    html { scroll-behavior: smooth; }
-
-    /* HEADER (Transparent to White) */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 25px 50px;
-      transition: all 0.4s ease;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: transparent;
-    }
-
-    header.scrolled {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 15px 50px;
-      box-shadow: 0 5px 30px rgba(0,0,0,0.05);
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
+    a {
+      color: inherit;
       text-decoration: none;
-      color: #1a1a1a;
-      letter-spacing: -0.5px;
-    }
-    .logo span { color: var(--text-light); font-size: 0.9rem; font-family: 'Manrope', sans-serif; font-weight: 400; margin-left: 10px;}
-
-    .nav-links { display: flex; gap: 40px; list-style: none; }
-    .nav-links a {
-      text-decoration: none;
-      color: #1a1a1a;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      position: relative;
     }
 
-    /* Underline animation like Tara Travel */
-    .nav-links a::after {
-      content: ''; position: absolute; width: 0; height: 1px;
-      bottom: -5px; left: 0; background-color: #000;
-      transition: width 0.3s;
-    }
-    .nav-links a:hover::after { width: 100%; }
-
-    /* HERO SECTION (Big Image) */
-    .hero {
-      height: 100vh;
-      width: 100%;
-      position: relative;
+    /* Layout */
+    .page {
+      min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      overflow: hidden;
+      flex-direction: column;
     }
 
-    .hero-bg {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      /* High Quality Office/Abstract Image */
-      background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2301&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-      filter: brightness(0.9);
-      transform: scale(1.1);
-      transition: transform 10s ease; /* Subtle zoom */
-    }
-    .hero:hover .hero-bg { transform: scale(1); }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      max-width: 800px;
+    .shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
       padding: 0 20px;
     }
 
-    .hero h1 {
-      font-size: 4.5rem;
+    /* Header */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(5,7,11,0.9), rgba(5,7,11,0.3), transparent);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .nav {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(224, 192, 110, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Clash Display", system-ui;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
       line-height: 1.1;
-      margin-bottom: 20px;
-      text-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      font-style: italic; /* Elegant touch */
     }
 
-    .hero p {
-      font-size: 1.2rem;
-      font-weight: 300;
-      margin-bottom: 40px;
-      color: rgba(255,255,255,0.9);
+    .logo-text span:first-child {
+      font-family: "Clash Display";
+      font-size: 0.95rem;
     }
 
-    .btn-hero {
-      padding: 18px 40px;
-      background: #fff;
-      color: #000;
-      text-decoration: none;
-      border-radius: 50px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      transition: 0.3s;
-      display: inline-block;
-    }
-    .btn-hero:hover { background: #000; color: #fff; }
-
-    /* INTRO SECTION */
-    .intro {
-      padding: 120px 20px;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .intro h2 { font-size: 2.5rem; margin-bottom: 30px; line-height: 1.3; }
-    .intro p { font-size: 1.1rem; color: var(--text-light); }
-
-    /* SERVICES (Masonry/Grid Style like Tara) */
-    .services-section {
-      padding: 50px 5%;
-      background: var(--light-gray);
+    .logo-text span:last-child {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-sub);
     }
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-    .section-title span {
-      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--text-light); display: block; margin-bottom: 10px;
-    }
-    .section-title h2 { font-size: 3rem; }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 40px;
-    }
-
-    .service-card {
-      background: #fff;
-      overflow: hidden;
-      cursor: pointer;
-      transition: 0.4s ease;
-      position: relative;
-    }
-
-    /* Image Effect */
-    .service-img {
-      height: 250px;
-      width: 100%;
-      overflow: hidden;
-    }
-    .service-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-    .service-card:hover .service-img img { transform: scale(1.1); }
-
-    .service-info {
-      padding: 30px;
-    }
-    .service-info h3 { font-size: 1.8rem; margin-bottom: 10px; }
-    .service-info p { color: var(--text-light); font-size: 0.95rem; margin-bottom: 20px; }
-    
-    .service-link {
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
       font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #000;
-      font-weight: 700;
-      text-decoration: none;
-      border-bottom: 1px solid #000;
+      letter-spacing: 0.18em;
+      color: var(--text-sub);
+    }
+
+    .nav-links a {
+      position: relative;
       padding-bottom: 3px;
     }
 
-    /* STATS (Clean Number Row) */
-    .stats {
-      padding: 100px 5%;
-      display: flex;
-      justify-content: space-around;
-      border-bottom: 1px solid #eee;
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.2s ease;
     }
-    .stat-item { text-align: center; }
-    .stat-item h2 { font-size: 3.5rem; margin-bottom: 10px; }
-    .stat-item p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-light); }
 
-    /* CONTACT (Minimalist) */
-    .contact {
-      padding: 120px 20px;
-      text-align: center;
-      background: #fff;
+    .nav-links a:hover::after {
+      width: 100%;
     }
-    .contact h2 { font-size: 3rem; margin-bottom: 40px; }
-    
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    
-    .contact-btn-large {
-      padding: 20px 50px;
-      border: 1px solid #000;
-      color: #000;
-      text-decoration: none;
-      font-size: 1rem;
+
+    .nav-cta {
+      font-size: 0.78rem;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--bg);
+      background: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: 0.3s;
-    }
-    .contact-btn-large:hover {
-      background: #000;
-      color: #fff;
-    }
-    
-    .contact-btn-filled {
-      background: #000;
-      color: #fff;
-    }
-    .contact-btn-filled:hover {
-      background: #333;
-      transform: translateY(-5px);
+      letter-spacing: 0.16em;
     }
 
-    /* FOOTER */
-    footer {
-      background: #111;
-      color: #fff;
-      padding: 80px 5%;
+    /* Hero */
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      gap: 42px;
+      align-items: center;
+      min-height: 100vh;
+      padding-top: 72px;
+      padding-bottom: 60px;
+    }
+
+    .hero-main-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: "Clash Display";
+      font-size: clamp(2.4rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      max-width: 440px;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .hero-chip {
+      font-size: 0.78rem;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--text-sub);
+      background: rgba(9, 12, 19, 0.9);
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .btn-primary {
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #05070b;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-sub);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      cursor: pointer;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-sub);
+    }
+
+    /* Hero Right Card (like Tara hero image) */
+    .hero-panel {
+      border-radius: 26px;
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+      background:
+        radial-gradient(circle at top left, rgba(224,192,110,0.16), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(65,147,204,0.3), transparent 70%),
+        linear-gradient(135deg, #070910, #020308);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 320px;
+    }
+
+    .hero-panel-top {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 18px;
     }
-    
-    .footer-col h4 { color: #fff; margin-bottom: 20px; font-size: 1.2rem; }
-    .footer-col p, .footer-col a { color: #999; display: block; margin-bottom: 10px; text-decoration: none; font-size: 0.9rem; }
-    .footer-col a:hover { color: #fff; }
 
-    /* Floating WhatsApp */
-    .float-wa {
-      position: fixed; bottom: 30px; right: 30px;
-      width: 60px; height: 60px; background: #25D366;
-      border-radius: 50%; color: #fff; display: flex;
-      align-items: center; justify-content: center;
-      font-size: 30px; z-index: 100; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      transition: 0.3s;
+    .hero-panel-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-sub);
     }
-    .float-wa:hover { transform: scale(1.1); }
 
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.8rem; }
-      header { padding: 20px; }
-      .nav-links { display: none; }
-      .services-grid { grid-template-columns: 1fr; }
-      .stats { flex-direction: column; gap: 40px; }
-      footer { flex-direction: column; }
+    .hero-panel-title {
+      font-family: "Clash Display";
+      font-size: 1.4rem;
+      margin-top: 6px;
+    }
+
+    .hero-panel-badge {
+      font-size: 0.75rem;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-sub);
+    }
+
+    .hero-panel-middle {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-bottom: 20px;
+      max-width: 340px;
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .hero-panel-stat {
+      font-size: 0.78rem;
+      padding: 8px 9px;
+      border-radius: 12px;
+      background: rgba(5,7,11,0.9);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .hero-panel-stat span:first-child {
+      display: block;
+      font-size: 0.7rem;
+      color: var(--text-sub);
+      margin-bottom: 3px;
+    }
+
+    .hero-panel-stat span:last-child {
+      font-weight: 500;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 0;
+    }
+
+    .section-header {
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: "Clash Display";
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      max-width: 520px;
+    }
+
+    /* About block (2 columns) */
+    .cols-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    .about-highlight {
+      margin-top: 14px;
+      padding: 12px 13px;
+      border-radius: 14px;
+      border: 1px dashed rgba(255,255,255,0.12);
+      font-size: 0.86rem;
+      color: var(--text-sub);
+      background: rgba(7,10,18,0.9);
+    }
+
+    .about-list {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--text-sub);
+    }
+
+    .about-list li {
+      margin-bottom: 6px;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .about-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Simple cards */
+    .card-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-soft);
+      padding: 14px 13px;
+      font-size: 0.86rem;
+      color: var(--text-sub);
+    }
+
+    .card-title {
+      font-size: 0.92rem;
+      margin-bottom: 6px;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-sub);
+      margin-bottom: 8px;
+    }
+
+    /* Contact */
+    .contact-box {
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: var(--bg-soft);
+      padding: 18px 16px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contact-note {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      font-size: 0.86rem;
+    }
+
+    .contact-item-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-sub);
+      margin-bottom: 2px;
+    }
+
+    .contact-item-value a {
+      color: var(--text-main);
+    }
+
+    .wa-btn {
+      margin-top: 10px;
+      display: inline-block;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #25D366;
+      color: #020305;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 18px 0 22px;
+      font-size: 0.76rem;
+      color: var(--text-sub);
+    }
+
+    /* Responsive */
+    @media (max-width: 960px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-panel {
+        order: -1;
+      }
+      .cols-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-box {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+      .hero-inner {
+        padding-top: 84px;
+      }
+      .hero-panel {
+        border-radius: 20px;
+      }
+      .card-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
     }
   </style>
 </head>
 <body>
+<div class="page">
 
-  <header id="header">
-    <a href="#" class="logo">Mohit Prasad <span>Finance</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Expertise</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+  <!-- Header -->
+  <header>
+    <div class="shell">
+      <nav class="nav">
+        <div class="nav-left">
+          <div class="logo-mark">MP</div>
+          <div class="logo-text">
+            <span>Mohit Prasad</span>
+            <span>Financial & Tax Consultant</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#approach">Approach</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="nav-cta">Book a call</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <section class="hero" id="home">
-    <div class="hero-bg"></div>
-    <div class="hero-content" data-aos="fade-up" data-aos-duration="1500">
-      <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.9rem; margin-bottom: 20px;">Delhi Based Tax Consultant</p>
-      <h1>Precision. Integrity. Growth.</h1>
-      <p>Simplifying financial complexities for businesses and individuals.</p>
-      <a href="#services" class="btn-hero">Explore Services</a>
-    </div>
-  </section>
+  <!-- Hero -->
+  <main class="hero">
+    <div class="shell">
+      <div class="hero-inner">
+        <!-- Left -->
+        <div>
+          <div class="hero-main-kicker">Delhi · GST · Tax · Accounting</div>
+          <h1 class="hero-title">
+            Quiet, practical<br>
+            <span>financial guidance</span><br>
+            for real businesses.
+          </h1>
+          <p class="hero-sub">
+            I help individuals and small businesses in Delhi NCR handle GST, Income Tax, accounting
+            and loan-ready financials — without drama, jargon or last-minute panic.
+          </p>
 
-  <section class="intro" id="about">
-    <div data-aos="fade-up">
-      <h2>"Accounting is the language of business. We ensure yours speaks success."</h2>
-      <p>I am Mohit Prasad, providing high-end GST, Income Tax, and Corporate solutions. We move beyond basic filing to provide strategic financial advice.</p>
-    </div>
-  </section>
+          <div class="hero-grid">
+            <div class="hero-chip">GST & ITR compliance</div>
+            <div class="hero-chip">Clean books & reports</div>
+            <div class="hero-chip">Loan documentation</div>
+            <div class="hero-chip">Business registration</div>
+          </div>
 
-  <section class="stats">
-    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-      <h2>500+</h2>
-      <p>Happy Clients</p>
-    </div>
-    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-      <h2>10+</h2>
-      <p>Years Experience</p>
-    </div>
-    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-      <h2>100%</h2>
-      <p>Accuracy</p>
-    </div>
-  </section>
+          <div class="hero-cta-row">
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+              Book a consultation
+            </button>
+            <button class="btn-outline" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+              How I work
+            </button>
+          </div>
 
-  <section class="services-section" id="services">
-    <div class="section-title" data-aos="fade-up">
-      <span>Our Expertise</span>
-      <h2>Curated Financial Services</h2>
-    </div>
+          <div class="hero-note">
+            Usually working with traders, service providers, freelancers and early-stage founders.
+          </div>
+        </div>
 
-    <div class="services-grid">
-      <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=800&auto=format&fit=crop" alt="GST">
-        </div>
-        <div class="service-info">
-          <h3>GST Compliance</h3>
-          <p>End-to-end GST management, from registration to monthly filing and reconciliation.</p>
-          <a href="#contact" class="service-link">Learn More</a>
-        </div>
-      </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?q=80&w=800&auto=format&fit=crop" alt="Tax">
-        </div>
-        <div class="service-info">
-          <h3>Income Tax</h3>
-          <p>Strategic ITR filing for salaried individuals and businesses to maximize savings.</p>
-          <a href="#contact" class="service-link">Learn More</a>
-        </div>
-      </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" alt="Accounting">
-        </div>
-        <div class="service-info">
-          <h3>Corporate Accounting</h3>
-          <p>Outsourced bookkeeping services to keep your financial records audit-ready.</p>
-          <a href="#contact" class="service-link">Learn More</a>
-        </div>
-      </div>
-
-      <div class="service-card" data-aos="fade-up" data-aos-delay="400">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Company">
-        </div>
-        <div class="service-info">
-          <h3>Business Setup</h3>
-          <p>Company Registration (Pvt Ltd, LLP), MSME, and Trademark services.</p>
-          <a href="#contact" class="service-link">Learn More</a>
-        </div>
-      </div>
-      
-      <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1565514020176-dbf2277e491e?q=80&w=800&auto=format&fit=crop" alt="Loans">
-        </div>
-        <div class="service-info">
-          <h3>Project Finance</h3>
-          <p>CMA Data and Project Reports for securing business loans easily.</p>
-          <a href="#contact" class="service-link">Learn More</a>
-        </div>
-      </div>
-
-       <div class="service-card" data-aos="fade-up" data-aos-delay="600">
-        <div class="service-img">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" alt="TDS">
-        </div>
-        <div class="service-info">
-          <h3>TDS & Payroll</h3>
-          <p>Handling employee taxation, Form 16, and monthly TDS returns.</p>
-          <a href="#contact" class="service-link">Learn More</a>
-        </div>
+        <!-- Right Panel -->
+        <aside class="hero-panel">
+          <div>
+            <div class="hero-panel-top">
+              <div>
+                <div class="hero-panel-tag">Snapshot</div>
+                <div class="hero-panel-title">Your numbers, in one simple view.</div>
+              </div>
+              <div class="hero-panel-badge">1:1, private & discreet</div>
+            </div>
+            <div class="hero-panel-middle">
+              Together we keep your GST, tax and books under control — so bank managers, investors
+              and future you aren’t surprised later.
+            </div>
+          </div>
+          <div class="hero-panel-grid">
+            <div class="hero-panel-stat">
+              <span>Typical engagement</span>
+              <span>12+ months</span>
+            </div>
+            <div class="hero-panel-stat">
+              <span>Response time</span>
+              <span>24–48 hours</span>
+            </div>
+            <div class="hero-panel-stat">
+              <span>Focus</span>
+              <span>Clarity over shortcuts</span>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
-  </section>
+  </main>
 
-  <section class="contact" id="contact">
-    <div data-aos="fade-up">
-      <p style="text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px;">Get in Touch</p>
-      <h2>Ready to optimize your finances?</h2>
-      <div class="contact-links">
-        <a href="https://wa.me/918595366682" class="contact-btn-large contact-btn-filled">WhatsApp Us</a>
-        <a href="mailto:mohitparsad371@gmail.com" class="contact-btn-large">Email Us</a>
-        <a href="tel:+918595366682" class="contact-btn-large">Call Now</a>
+  <!-- About -->
+  <section id="about">
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">About</div>
+        <h2 class="section-title">Quiet, serious support for your money work.</h2>
+        <p class="section-sub">
+          No fancy promises, no hype. Just careful, consistent work on the things that
+          actually keep you compliant and loan-ready.
+        </p>
+      </div>
+
+      <div class="cols-2">
+        <div class="about-text">
+          <p>
+            I work with individuals, proprietors and small companies who want their financial
+            backbone to be simple and reliable. That usually means:
+          </p>
+          <ul class="about-list">
+            <li>GST and Income Tax filings done on time, without confusion.</li>
+            <li>Books of accounts that actually match your bank and cash reality.</li>
+            <li>Clean paperwork when you go for a loan, limit enhancement or registration.</li>
+          </ul>
+
+          <div class="about-highlight">
+            You don’t have to become a finance expert. You just need a calm,
+            reachable person who understands your business and keeps things in order
+            month after month.
+          </div>
+        </div>
+
+        <div>
+          <div class="pill">Who I’m usually a good fit for</div>
+          <ul class="about-list">
+            <li>Small trading & service businesses in Delhi NCR.</li>
+            <li>Freelancers and self-employed professionals.</li>
+            <li>New businesses that want to start “clean” from day one.</li>
+            <li>People who prefer WhatsApp + clear summaries instead of long reports.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Services -->
+  <section id="services">
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">Services</div>
+        <h2 class="section-title">What I can take off your plate.</h2>
+      </div>
+
+      <div class="card-row">
+        <div class="card">
+          <div class="card-title">GST</div>
+          <p>Registration, monthly / quarterly returns, annual return, input tax credit checks
+            and notice replies.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Income Tax</div>
+          <p>ITR for individuals & businesses, basic tax planning and responses to common
+            portal notices.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Accounting</div>
+          <p>Books of accounts, basic MIS, and clean statements that match your bank
+            and invoices.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Business Registration</div>
+          <p>Proprietorship, partnership, company setup and related registrations as needed.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Loan & Finance Paperwork</div>
+          <p>Simple, bank-friendly financials and documentation when you apply for loans
+            or limits.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">Other Compliance</div>
+          <p>Basic licenses and ongoing compliance on a case-by-case basis, where it makes sense.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section id="approach">
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">Approach</div>
+        <h2 class="section-title">Simple structure. No drama.</h2>
+        <p class="section-sub">
+          The work is usually not complicated. It just needs a clear system and someone
+          who doesn’t disappear around due dates.
+        </p>
+      </div>
+
+      <div class="cols-2">
+        <div>
+          <div class="card">
+            <div class="card-title">01 · Understand your situation</div>
+            <p>I listen first — how your business runs, what’s pending, where you feel stuck.
+              We decide what really matters for the next year.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">02 · Set up a simple routine</div>
+          <p>We fix a basic rhythm: what needs to be done monthly / quarterly, what I’ll
+            remind you for, and how you’ll share documents.</p>
+        </div>
+        <div class="card">
+          <div class="card-title">03 · Keep things clean over time</div>
+          <p>As the months pass, your filings, reports and statements stay consistent. So when
+            you need a loan, an approval or just peace of mind — you already have it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-kicker">Contact</div>
+        <h2 class="section-title">If you’d like to work together.</h2>
+        <p class="section-sub">
+          A short WhatsApp message or email with your basic details is enough to start.
+          I usually reply within one working day.
+        </p>
+      </div>
+
+      <div class="contact-box">
+        <div>
+          <div class="contact-note">
+            Please mention:
+            <br>· Your name
+            <br>· City / area
+            <br>· Nature of business or job
+            <br>· What you need help with (GST, ITR, accounting, registration, etc.)
+          </div>
+          <a class="wa-btn" href="https://wa.me/918595366682" target="_blank" rel="noreferrer">
+            Message on WhatsApp
+          </a>
+        </div>
+
+        <div class="contact-grid">
+          <div>
+            <div class="contact-item-label">Phone</div>
+            <div class="contact-item-value">
+              <a href="tel:+918595366682">+91 85953 66682</a>
+            </div>
+          </div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">
+              <a href="mailto:mohitparsad371@gmail.com">mohitparsad371@gmail.com</a>
+            </div>
+          </div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-value">Delhi NCR, India</div>
+          </div>
+          <div>
+            <div class="contact-item-label">Typical timings</div>
+            <div class="contact-item-value">Weekdays · 11am – 7pm (IST)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <div class="footer-col">
-      <h4 class="logo" style="color:#fff;">Mohit Prasad</h4>
-      <p>Providing excellence in financial<br>consultancy since 2015.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Address</h4>
-      <p>New Delhi, India</p>
-      <p>+91 8595366682</p>
-    </div>
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <a href="https://www.instagram.com/mohit_shah0002" target="_blank">Instagram</a>
-      <a href="https://www.linkedin.com/in/mohit-prasad-769316336" target="_blank">LinkedIn</a>
-      <a href="https://www.facebook.com/share/1HNc6ASKbp/" target="_blank">Facebook</a>
-    </div>
-    <div class="footer-col">
-      <h4>Legal</h4>
-      <p>&copy; 2025 Mohit Prasad.</p>
-      <p>All Rights Reserved.</p>
+    <div class="shell">
+      © 2025 · Mohit Prasad · Financial & Tax Consultant.
     </div>
   </footer>
-
-  <a href="https://wa.me/918595366682" class="float-wa" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Initialize Animation on Scroll
-    AOS.init({
-      duration: 1000,
-      offset: 100,
-      once: true
-    });
-
-    // Header Background Change on Scroll
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-  </script>
+</div>
 </body>
 </html>
